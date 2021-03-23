@@ -22,6 +22,18 @@
                 menu.classList.remove("menuON");
             })
 
+            const lis= document.querySelectorAll("nav ul li")
+            
+            for(const li of lis){
+               
+                li.addEventListener("click",()=>{
+                    console.log("oke")
+                    menu.classList.remove("menuON");
+                })
+                
+            }
+
+            /* Menu tri dans portfolio */
             const fermer =document.querySelector(".fermer")
             const menuTrvx = document.querySelector(".menuTrvxResp")
             const menuTri = document.querySelector(".menutrier")
@@ -33,17 +45,16 @@
                 menuTrvx.classList.remove("menuOpen")
             })
 
-            const li = document.querySelector(".menuTrvxResp ul li a")
-                li.addEventListener("click",()=>
-            {
-                menuTri.classList.remove("menuOpen")
+            const liTri = document.querySelector(".menuTrvxResp ul li ")
+            liTri.addEventListener("click",()=>{
+                menuTrvx.classList.remove("menuOpen")
             })
         })
     </script>
 </head>
 <body>
     <nav>
-            <div class="logo"><a href="index.html"><img src="images/logoMenu.png" alt=""></a></div>
+            <div class="logo"><a href="index.php"><img src="images/logoMenu.png" alt=""></a></div>
             <ul>
                     <li><a href="index.php"><div class="haut-titre">Welcome</div><div class="sous-titre">ACCUEIL</div></a></li>
                     <li><a href="#slide2"><div class="haut-titre">About me</div><div class="sous-titre">À PROPOS</div></a></li>
