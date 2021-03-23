@@ -362,6 +362,8 @@ body{
     grid-template-rows: repeat (6, 1fr);
     list-style: none;
     padding: 0px;
+    z-index: 70;
+    position: absolute;
 }
 #TravauxResp ul li{
     list-style: none;
@@ -377,6 +379,7 @@ body{
 .menuTrvxResp .fleurslide3{
     opacity: 20%;
     margin-top: -70px;
+    z-index: 69;
 }
 .fermer{
     position: absolute; 

@@ -36,7 +36,7 @@
                     menu.classList.remove("menuON");
                 })
             })
-        
+
            
 
             /* menu travaux*/
@@ -52,13 +52,15 @@
             })
 
             
-            const items = document.querySelectorAll("#TravauxResp .item")
-           
-            items.forEach(link => {
+            const items = document.querySelectorAll(".item")
+            
+            items.forEach(item => {
                 item.addEventListener('click',()=>{
-                    menuTrvx.classList.remove("menuON");
+                    menuTrvx.classList.remove("menuOpen")
                 })
             })
+            
+
         })
     </script>
 </head>
@@ -182,12 +184,12 @@
             <div class="fleurslide3"><img src="images/fleurVerte.png" alt=""></div>
             <nav id="TravauxResp">
                 <ul>
-                    <li class="col-md-2 item"><a href="#slide3">Dessin et illustration</a></li>
-                    <li class="col-md-2 item"><a href="#slide3">Retouches graphiques  </a></li>
-                    <li class="col-md-2 item"><a href="#slide3">Dessin vectoriel</a></li>
-                    <li class="col-md-2 item"><a href="#slide3">Mise en page PAO</a></li>
-                    <li class="col-md-2 item"><a href="#slide3">Web - WebDesign</a></li>
-                    <li class="col-md-2 item"><a href="#slide3">Animation</a></li>  
+                    <li class="col-md-2 "><a class="item" href="#slide3">Dessin et illustration</a></li>
+                    <li class="col-md-2 "><a class="item" href="#slide3">Retouches graphiques  </a></li>
+                    <li class="col-md-2 "><a class="item" href="#slide3">Dessin vectoriel</a></li>
+                    <li class="col-md-2 "><a class="item" href="#slide3">Mise en page PAO</a></li>
+                    <li class="col-md-2 "><a class="item" href="#slide3">Web - WebDesign</a></li>
+                    <li class="col-md-2 "><a class="item" href="#slide3">Animation</a></li>  
                 </ul>
             </nav>
         </div>
