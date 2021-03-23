@@ -33,6 +33,11 @@
                 menuTrvx.classList.remove("menuOpen")
             })
 
+            const li = document.querySelector(".menuTrvxResp ul li a")
+                li.addEventListener("click",()=>
+            {
+                menuTri.classList.remove("menuOpen")
+            })
         })
     </script>
 </head>
@@ -154,12 +159,12 @@
             </div>
             <div class="fleurslide3"><img src="images/fleurVerte.png" alt=""></div>
             <ul>
-                <li class="col-md-2 "><a href="#slide3">Dessin et illustration</a></li>
-                <li class="col-md-2"><a href="#slide3">Retouches graphiques  </a></li>
-                <li class="col-md-2"><a href="#slide3">Dessin vectoriel</a></li>
-                <li class="col-md-2"><a href="#slide3">Mise en page PAO</a></li>
-                <li class="col-md-2"><a href="#slide3">Web - WebDesign</a></li>
-                <li class="col-md-2"><a href="#slide3">Animation</a></li>  
+                <li ><a href="#slide3">Dessin et illustration</a></li>
+                <li ><a href="#slide3">Retouches graphiques  </a></li>
+                <li ><a href="#slide3">Dessin vectoriel</a></li>
+                <li ><a href="#slide3">Mise en page PAO</a></li>
+                <li ><a href="#slide3">Web - WebDesign</a></li>
+                <li ><a href="#slide3">Animation</a></li>  
             </ul>
         </div>
         <div class="fleurslide3"><img src="images/fleurVerte.png" alt=""></div>
