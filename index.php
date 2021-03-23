@@ -8,10 +8,62 @@
     <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css">
     <link rel="stylesheet" href="style.css" type="text/css">
-    
+    <script>
+        window.addEventListener("load",()=>{
+
+            /*menu principal */
+            const burger=document.querySelector(".menuBurger")
+            const menu=document.querySelector("#slideMenu")
+            console.log("menu")
+            burger.addEventListener("click",()=>{
+                menu.classList.toggle("menuON");
+            })
+            const croix = document.querySelector(".croix")
+            croix.addEventListener("click",()=>{
+                menu.classList.remove("menuON");
+            })
+
+            const linksh = document.querySelectorAll(".haut-tit")
+            const links = document.querySelectorAll(".sous-tit")
+           
+            linksh.forEach(link => {
+                link.addEventListener('click',()=>{
+                    menu.classList.remove("menuON");
+                })
+            })
+            links.forEach(link => {
+                link.addEventListener('click',()=>{
+                    menu.classList.remove("menuON");
+                })
+            })
+        
+           
+
+            /* menu travaux*/
+
+            const fermer =document.querySelector(".fermer")
+            const menuTrvx = document.querySelector(".menuTrvxResp")
+            const menuTri = document.querySelector(".menutrier")
+            menuTri.addEventListener("click",()=>{
+                menuTrvx.classList.add("menuOpen")
+            })
+            fermer.addEventListener("click",()=>{
+                menuTrvx.classList.remove("menuOpen")
+            })
+
+            
+            const items = document.querySelectorAll("#TravauxResp .item")
+           
+            items.forEach(link => {
+                item.addEventListener('click',()=>{
+                    menuTrvx.classList.remove("menuON");
+                })
+            })
+        })
+    </script>
 </head>
 <body>
-    <nav>
+    <nav id="principal">
             <div class="logo"><a href="index.html"><img src="images/logoMenu.png" alt=""></a></div>
             <ul>
                     <li><a href="index.php"><div class="haut-titre">Welcome</div><div class="sous-titre">ACCUEIL</div></a></li>
@@ -36,20 +88,23 @@
                 <div class="barre" id="barre2"></div>
             </div>
         </div>
-        <ul class="menuResp">
-            <li>
-                <a href="index.php"><div class="haut-titre">Welcome</div><div class="sous-titre">ACCUEIL</div></a>
-            </li>
-            <li>
-                <a href="#slide2"><div class="haut-titre">About me</div><div class="sous-titre">À PROPOS</div></a>
-            </li>
-            <li>
-                <a href="#slide3"><div class="haut-titre">See my work</div><div class="sous-titre">PORTFOLIO</div></a>
-            </li>
-            <li>
-                <a href="#slide4"><div class="haut-titre">Get in touch</div><div class="sous-titre">CONTACT</div></a>
-            </li>
-        </ul>
+
+        <nav id="responsive">
+            <ul class="menuResp">
+                <li>
+                    <a href="index.php"><div class="haut-tit">Welcome</div><div class="sous-tit">ACCUEIL</div></a>
+                </li>
+                <li>
+                    <a href="#slide2"><div class="haut-tit">About me</div><div class="sous-tit">À PROPOS</div></a>
+                </li>
+                <li>
+                    <a href="#slide3"><div class="haut-tit">See my work</div><div class="sous-tit">PORTFOLIO</div></a>
+                </li>
+                <li>
+                    <a href="#slide4"><div class="haut-tit">Get in touch</div><div class="sous-tit">CONTACT</div></a>
+                </li>
+            </ul>
+        </nav>
     </div>
     <div class="slide" id="slide1">
         
@@ -115,38 +170,47 @@
         </div>
     </div>
     </div>
+
+
     <div class="slide" id="slide3">
+        <!--Menu responsive travaux -->
         <div class="menuTrvxResp">
             <div class="fermer">
                 <div class="barre" id="barre1"></div>
                 <div class="barre" id="barre2"></div>
             </div>
             <div class="fleurslide3"><img src="images/fleurVerte.png" alt=""></div>
-            <ul>
-                <li class="col-md-2 "><a href="#slide3">Dessin et illustration</a></li>
-                <li class="col-md-2"><a href="#slide3">Retouches graphiques  </a></li>
-                <li class="col-md-2"><a href="#slide3">Dessin vectoriel</a></li>
-                <li class="col-md-2"><a href="#slide3">Mise en page PAO</a></li>
-                <li class="col-md-2"><a href="#slide3">Web - WebDesign</a></li>
-                <li class="col-md-2"><a href="#slide3">Animation</a></li>  
-            </ul>
+            <nav id="TravauxResp">
+                <ul>
+                    <li class="col-md-2 item"><a href="#slide3">Dessin et illustration</a></li>
+                    <li class="col-md-2 item"><a href="#slide3">Retouches graphiques  </a></li>
+                    <li class="col-md-2 item"><a href="#slide3">Dessin vectoriel</a></li>
+                    <li class="col-md-2 item"><a href="#slide3">Mise en page PAO</a></li>
+                    <li class="col-md-2 item"><a href="#slide3">Web - WebDesign</a></li>
+                    <li class="col-md-2 item"><a href="#slide3">Animation</a></li>  
+                </ul>
+            </nav>
         </div>
+        <!-- fin menu travaux-->
+
         <div class="fleurslide3"><img src="images/fleurVerte.png" alt=""></div>
         <div class="container galerie">
         <h2>PORTFOLIO</h2>
         <h4>See my work</h4>
         <div class="menuTravx">
-            <ul>
-                <div class="row g-0 justify-content-evently">
-                    <li class="col-2 md-0"><a href="#slide3">Dessin et illustration</a></li>
-                    <li class="col-2"><a href="#slide3">Retouches graphiques  </a></li>
-                    <li class="col-2"><a href="#slide3">Dessin vectoriel</a></li>
-                    <li class="col-2"><a href="#slide3">Mise en page PAO</a></li>
-                    <li class="col-2"><a href="#slide3">Web - WebDesign</a></li>
-                    <li class="col-2"><a href="#slide3">Animation</a></li>  
-                </div>  
-               
-            </ul>
+            <nav id="Travaux">
+                <ul>
+                    <div class="row g-0 justify-content-evently">
+                        <li class="col-2 md-0"><a href="#slide3">Dessin et illustration</a></li>
+                        <li class="col-2"><a href="#slide3">Retouches graphiques  </a></li>
+                        <li class="col-2"><a href="#slide3">Dessin vectoriel</a></li>
+                        <li class="col-2"><a href="#slide3">Mise en page PAO</a></li>
+                        <li class="col-2"><a href="#slide3">Web - WebDesign</a></li>
+                        <li class="col-2"><a href="#slide3">Animation</a></li>  
+                    </div>  
+                
+                </ul>
+            </nav>
             <div class="menutrier">
                     
                     <div class="ligne">
