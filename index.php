@@ -22,16 +22,20 @@
                 menu.classList.remove("menuON");
             })
 
-            const lis= document.querySelectorAll("nav ul li")
-            
-            for(const li of lis){
-               
-                li.addEventListener("click",()=>{
-                    console.log("oke")
+            const linksh = document.querySelectorAll(".haut-titre")
+            const links = document.querySelectorAll(".sous-titre")
+           
+            linksh.forEach(link => {
+                link.addEventListener('click',()=>{
                     menu.classList.remove("menuON");
                 })
-                
-            }
+            })
+        
+            links.forEach(link => {
+                link.addEventListener('click',()=>{
+                    menu.classList.remove("menuON");
+                })
+            })
 
             /* Menu tri dans portfolio */
             const fermer =document.querySelector(".fermer")
@@ -53,7 +57,7 @@
     </script>
 </head>
 <body>
-    <nav>
+    <nav id="normal">
             <div class="logo"><a href="index.php"><img src="images/logoMenu.png" alt=""></a></div>
             <ul>
                     <li><a href="index.php"><div class="haut-titre">Welcome</div><div class="sous-titre">ACCUEIL</div></a></li>
@@ -68,7 +72,6 @@
                 <div class="barre"></div>
                 <div class="barre"></div>
             </div>
-        
     </nav>
 
     <div class="slide" id="slideMenu">
@@ -79,21 +82,23 @@
                 <div class="barre" id="barre2"></div>
             </div>
         </div>
-        <ul class="menuResp">
-            <li>
-                <a href="index.php"><div class="haut-titre">Welcome</div><div class="sous-titre">ACCUEIL</div></a>
-            </li>
-            <li>
-                <a href="#slide2"><div class="haut-titre">About me</div><div class="sous-titre">À PROPOS</div></a>
-            </li>
-            <li>
-                <a href="#slide3"><div class="haut-titre">See my work</div><div class="sous-titre">PORTFOLIO</div></a>
-            </li>
-            <li>
-                <a href="#slide4"><div class="haut-titre">Get in touch</div><div class="sous-titre">CONTACT</div></a>
-            </li>
-        </ul>
-    </div>
+        <nav id="responsive">
+                <ul class="menuResp">
+                <li>
+                    <a href="index.php"><div class="haut-titre">Welcome</div><div class="sous-titre">ACCUEIL</div></a>
+                </li>
+                <li>
+                    <a href="#slide2"><div class="haut-titre">About me</div><div class="sous-titre">À PROPOS</div></a>
+                </li>
+                <li>
+                    <a href="#slide3"><div class="haut-titre">See my work</div><div class="sous-titre">PORTFOLIO</div></a>
+                </li>
+                <li>
+                    <a href="#slide4"><div class="haut-titre">Get in touch</div><div class="sous-titre">CONTACT</div></a>
+                </li>
+                </ul>
+        </div>
+    </nav>
 
     <div class="slide" id="slide1">
         
