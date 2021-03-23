@@ -19,10 +19,10 @@ body{
     min-height: 100vh;
     position: relative;
     overflow-x: hidden;
-     
+
 }
 
-#responsive{
+#slideMenu{
     background-color:rgb(0, 161, 153);
     z-index: 100;
     position: fixed;
@@ -32,23 +32,22 @@ body{
     color: white;
     overflow: hidden;
     transition: all ease-in 1s;
-   
-    
+
+
 }
 .menuON{
     left:0 !important;
     z-index: 100;
     transition: all ease-in 1s;
-    
+
 }
 
-#responsive{
+.menuResp{
     margin-top: 20%;
 }
 #slideMenu ul{
     position: relative;
     width: 100%;
-    height: 80%;
     color: white;
     text-align: center;
     height: 100%;
@@ -96,7 +95,7 @@ body{
     width: 40px;
     border-radius: 20px;
     margin: 5px;
-    
+
 }
 .croix #barre1{
     transform: rotate(45deg);
@@ -113,7 +112,7 @@ body{
     position: absolute;
     cursor: pointer;
     z-index: 51;
-    
+
 }
 .menuBurger .barre{
     background-color: white;
@@ -123,7 +122,7 @@ body{
     border-radius: 20px;
 }
 
-#normal{
+nav{
     width: 100%;
     height: 100px;
     background-color:rgba(0, 161, 154, 1);
@@ -134,7 +133,7 @@ body{
     box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.25);
     display: grid;
     grid-template-columns: 1fr 9fr;
-    
+
 }
 .logo img{
     height: 70px;
@@ -143,27 +142,27 @@ body{
     margin-bottom: 10px;
     grid-column: 2fr;
 }
-#normal ul {
+nav ul {
     display: grid;
     grid-template-columns: repeat(4, 1fr);;
     text-decoration: none;
     color: white;
     list-style: none;
 
-    
-    
+
+
 }
 
-#normal ul li{
+nav ul li{
     text-align: center;
     transform: translateY(25%);
 }
 
-#normal ul li a:hover{
+nav ul li a:hover{
     color: black;
 }
 
-#normal ul li a{
+nav ul li a{
     text-decoration: none;
     list-style: none;
     color:white;
@@ -219,7 +218,7 @@ body{
 #droite1{
     display: flex;
     align-items: center;
-    
+
 }
 
 
@@ -241,8 +240,8 @@ body{
     position: absolute;
     margin-top: -50px;
     margin-left: -30%;
-    
-    
+
+
 }
 .donnees{
     width:400px;
@@ -282,15 +281,15 @@ body{
     width: 100%;
     background-color: white;
     margin-left: 5%;
-    
-    
+
+
 }
 
 #slide2 h2{
     font-weight: 900;
     font-size: 6vw;
     text-align: end;
-    
+
 }
 #slide2 h4{
     width: 100%;
@@ -381,7 +380,7 @@ body{
     width: 40px;
     border-radius: 20px;
     margin: 5px;
-    
+
 }
 .fermer #barre1{
     transform: rotate(45deg);
@@ -399,7 +398,7 @@ body{
     padding-top: 120px;
     padding-bottom: -200px;
     height: 100%;
-    
+
 }
 .galerie{
     padding-bottom: 250px;
@@ -429,7 +428,7 @@ body{
     right: 0;
     height: 50vh;
     z-index:1;
-    
+
 }
 .fleurslide3 img{
     margin-top: 80px;
@@ -443,7 +442,7 @@ body{
     z-index: 20;
     box-shadow: 5px 5px 20px 25px rgba(255, 255, 255, 0.61);
     border-radius: 20px;
-    
+
 }
 .menuTravx ul{
     font-size: 10pt;
@@ -453,7 +452,7 @@ body{
 .menuTravx ul li{
     list-style: none;
     height: 30px;
-    
+
 }
 .menuTravx ul li a{
     color:rgba(16, 68, 87, 1);
@@ -486,7 +485,7 @@ body{
     width: 80%;
     margin-left: 50%;
     transform: translateX(-50%);
-    
+
 }
 
 .cadre{
@@ -521,7 +520,7 @@ body{
     margin-left: 60%;
     transform:translateX(-50%);
     margin-top: -5%;
-    
+
 }
 .contact{
     width: 450px;
@@ -550,7 +549,7 @@ body{
 .gauche4{
     width: 50%;
     margin-left: 0px;
-    
+
 }
 
 .droite4{
@@ -573,7 +572,7 @@ body{
 #slide4 h4{
     font-size: 1em;
     font-family: 'Bellota Text', cursive;
-    
+
 }
 .trou{
     background-color:white;
@@ -642,7 +641,7 @@ footer .container{
 }
 
 .copyright{
-    
+
     width: 100%;
     height: 20px;
     background-color: rgb(221, 221, 221);
@@ -681,7 +680,7 @@ footer .container{
 
 
 @media all and (max-width:1200px){
-    
+
     #gauche{
         padding-top: 50px;
     }
@@ -691,7 +690,7 @@ footer .container{
     .group{
         margin-top: 50px;
     }
-    
+
     .slide3{
         padding-bottom: 100px;
     }
@@ -699,7 +698,7 @@ footer .container{
         width: 100%;
         position: relative;
     }
-    
+
     .fleur img{
         width: auto;
         height: 400px;
@@ -707,9 +706,9 @@ footer .container{
         margin-top: 20px;
         margin-left: 100%;
 
-    
+
     }
-    
+
     .donnees{
         width:350px;
         height: 350px;
@@ -738,7 +737,7 @@ footer .container{
         text-align: right;
         padding-right: 30px;
     }
-   
+
 }
 @media all and (max-width: 992px){
     .menutrier{
@@ -760,16 +759,16 @@ footer .container{
         margin-left: 50%;
         transform: translateX(-50%);
     }
-    
+
 }   
 @media all and (max-width: 768px){
-    #normal ul{
+    nav ul{
         display: none;
     }
     .menuBurger{
         display: block;
     }
-    #normal{
+    nav{
         height: 70px;
     }
     .logo img{
@@ -795,20 +794,20 @@ footer .container{
         margin-top: -70px;
         margin-left: 15%;
     }
-    
+
     .illu{
         margin-top: -100px;
     }
     .droite4 h2{
         width: 95%;
         text-align: end;
-       
+
     }
     .droite4 h4{
         width: 95%;
         text-align: 30px;
-        
-    
+
+
     }
 }
 
@@ -821,7 +820,7 @@ footer .container{
         margin-top: 30px;
         margin-left: -25%;
 
-    
+
     }
     .donnees{
         width:280px;
@@ -836,7 +835,7 @@ footer .container{
         background-image: url(images/rectangle.svg);
         background-size: 280px 400px;
         background-repeat: no-repeat;
-        
+
     }
     .donnees  h5{
         margin-left: 0px !important;
@@ -846,7 +845,7 @@ footer .container{
         padding-right: 10px;
         font-weight: 900;
         padding-top: -10px;
-        
+
     }
     .donnees .duray{
         padding-top: 50px;
@@ -884,4 +883,4 @@ footer .container{
         font-size: 12pt;
         line-height: 20px;
     }
-}
+} 
