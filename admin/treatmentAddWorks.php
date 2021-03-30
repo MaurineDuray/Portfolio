@@ -136,7 +136,7 @@
                             ":description" => $description,
                             ":technic" => $technic,
                             ":image" => $image,
-                            "file"=> $file,
+                            ":file"=> $file,
                         ]);
                         $insert->closeCursor();
                         // redirection vers oeuvres.php avec message success 
@@ -154,7 +154,7 @@
                                 ":description" => $description,
                                 ":technic" => $technic,
                                 ":image" => $image,
-                                "file"=> $pdfcpt,
+                                ":file"=> $pdfcpt,
                             ]);
                             $insert->closeCursor();
                             // redirection vers oeuvres.php avec message success 

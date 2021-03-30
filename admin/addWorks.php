@@ -56,7 +56,7 @@
             <input type="date" id="date" name="date" class="form-control" required>
         </div>
         <div class="form-group mb-3">
-            <label for="category">Catégorie</label>
+            <label for="category">Catégorie:</label>
             <select name="category" id="category" class="form-control">
                 <option value="dessinIllu">Dessin et illustration</option>
                 <option value="retoucheGraph">Retouches graphiques</option>
@@ -68,20 +68,20 @@
             </select>
         </div>
         <div class="form-group  mb-3">
-            <label for="description">Description</label>
+            <label for="description">Description:</label>
             <textarea name="description" id="description" class="form-control" placeholder="description"></textarea>
         </div>
         <div class="form-group  mb-3">
-            <label for="technic">Techniques</label>
+            <label for="technic">Techniques:</label>
             <textarea name="technic" id="technic" class="form-control" placeholder="techniques"></textarea>
         </div>
         <div class="input-group mb-3">
-            <input type="image" class="form-control" id="inputGroupFile02" name="image">
-            <label class="input-group-text" for="inputGroupFile02">Image</label>
+            <input type="file" class="form-control" id="inputGroupFile" name="image">
+            <label class="input-group-text" for="inputGroupFile">Image</label>
         </div>
         <div class="input-group mb-3">
             <input type="file" class="form-control" id="inputGroupFile02" name="file">
-            <label class="input-group-text" for="inputGroupFile02">PDF (facultatif)</label>
+            <label class="input-group-text" for="inputGroupFile02">PDF</label>
         </div>
         <div class="form-group">
             <input type="submit" value="Ajouter" class="btn btn-success">
