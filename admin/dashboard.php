@@ -29,10 +29,10 @@
     <h1>Administration</h1>
     <h3>Bonjour <?php echo $_SESSION['login'] ?></h3>
     <a href="dashboard.php?deco=ok" class="btn btn-danger my-1">Déconnexion</a>
-    <a href="../index.php" class="btn btn-danger my-1">Retour au site</a>
+    <a href="../index.php" class="btn btn-success my-1">Retour au site</a>
     <div class="row">
         <div class="col-4">
-        <a href="oeuvres.php">Gestion des travaux</a><br>
+        <a href="works.php">Gestion des travaux</a><br>
             <a href="users.php">Gestion des administrateurs</a>
         </div>
     </div>
