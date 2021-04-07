@@ -71,11 +71,11 @@
             }
 
             // gestion du PDF 
-            if(!empty($_FILES['file']['tmp_name']))
+            if(!empty($_FILES['pdf']['tmp_name']))
             {
-                $pdf = basename($_FILES["file"]["name"]);
-                $pdfTaille = filesize($_FILES['file']['tmp_name']);
-                $pdfExtension = strrchr($_FILES['file']['name'],'.');
+                $pdf = basename($_FILES["pdf"]["name"]);
+                $pdfTaille = filesize($_FILES['pdf']['tmp_name']);
+                $pdfExtension = strrchr($_FILES['pdf']['name'],'.');
 
                   /* tester l'extension du fichier en comparaison du tableau $extensions */
                 /* in_array permet de savoir si le 1er paramètre se retrouve dans le 2ème paramètre qui doit être un tableau */
@@ -106,7 +106,7 @@
                 // traitement des fichiers doublons
                 $fichiercpt = rand().$fichier;
 
-                if(!empty($_FILES['file']['tmp_name']))
+                if(!empty($_FILES['pdf']['tmp_name']))
                 {
                     $pdf = strtr($pdf, 
                     'ÀÁÂÃÄÅÇÈÉÊËÌÍÎÏÒÓÔÕÖÙÚÛÜÝàáâãäåçèéêëìíîïðòóôõöùúûüýÿ', 
@@ -124,11 +124,11 @@
                 {
                     require "../connexion.php";
                     // test pour le PDF 
-                    if(empty($_FILES['file']['tmp_name']))
+                    if(empty($_FILES['pdf']['tmp_name']))
                     {
                         // le fichier est dans le dossier
                         // insertion dans la base de données
-                        $insert = $bdd->prepare("INSERT INTO works(title,date,category,description,technic,image,file) VALUES(:title,:date,:category,:description,:technic,:image,:file)");
+                        $insert = $bdd->prepare("INSERT INTO works(title,date,category,description,technic,image) VALUES(:title,:date,:category,:description,:technic,:image)");
                         $insert->execute([
                             ":title" => $title,
                             ":date"=>$date,
@@ -136,17 +136,17 @@
                             ":description" => $description,
                             ":technic" => $technic,
                             ":image" => $image,
-                            ":file"=> $file,
+                            
                         ]);
                         $insert->closeCursor();
                         // redirection vers oeuvres.php avec message success 
                         header("LOCATION:works.php?add=success");
                     }else{
-                        if(move_uploaded_file($_FILES['file']['tmp_name'], $dossier.$pdfcpt))
+                        if(move_uploaded_file($_FILES['pdf']['tmp_name'], $dossier.$pdfcpt))
                         {
                               // le fichier est dans le dossier
                             // insertion dans la base de données
-                            $insert = $bdd->prepare("INSERT INTO works(title,date,category,description,technic,image,file) VALUES(:title,:date,:category,:description,:technic,:image,:file)");
+                            $insert = $bdd->prepare("INSERT INTO works (title,date,category,description,technic,image,pdf) VALUES(:title,:date,:category,:description,:technic,:image,:pdf)");
                             $insert->execute([
                                 ":title" => $title,
                                 ":date"=>$date,
@@ -154,7 +154,7 @@
                                 ":description" => $description,
                                 ":technic" => $technic,
                                 ":image" => $image,
-                                ":file"=> $pdfcpt,
+                                ":pdf"=> $pdfcpt,
                             ]);
                             $insert->closeCursor();
                             // redirection vers oeuvres.php avec message success 

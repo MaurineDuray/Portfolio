@@ -78,7 +78,7 @@
         </div>
         <div class="form-group mb-3">
             <label for="date">Date: </label>
-            <input type="date" id="date" name="date" class="form-control" value="<?= $don['date'] ?>" required>
+            <input type="date" id="date" name="date" class="form-control" value="<?= $don['date'] ?>">
         </div>
         <div class="form-group mb-3">
             <label for="category">Catégorie</label>

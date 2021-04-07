@@ -50,7 +50,7 @@
         <table class="table table-hover">
             <thead>
                 <tr>
-                    <th class='text-center'>id</th>
+                    <th class='text-center'>Id</th>
                     <th class='text-center'>Titre</th>
                     <th class='text-center'>Date</th>
                     <th class='text-center'>Catégorie</th>

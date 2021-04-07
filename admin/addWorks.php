@@ -76,11 +76,11 @@
             <textarea name="technic" id="technic" class="form-control" placeholder="techniques"></textarea>
         </div>
         <div class="input-group mb-3">
-            <input type="file" class="form-control" id="inputGroupFile" name="image">
+            <input type="file" class="form-control" id="image" name="image">
             <label class="input-group-text" for="inputGroupFile">Image</label>
         </div>
         <div class="input-group mb-3">
-            <input type="file" class="form-control" id="inputGroupFile02" name="file">
+            <input type="file" class="form-control" id="pdf" name="pdf">
             <label class="input-group-text" for="inputGroupFile02">PDF</label>
         </div>
         <div class="form-group">
