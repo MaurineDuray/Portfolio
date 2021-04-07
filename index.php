@@ -1,3 +1,8 @@
+<?php
+    require "connexion.php";
+?>
+
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -154,12 +159,16 @@
                     <h6>Logiciels</h6>
                         <div class="trait"></div>
                         <div class="logiciels">
-                            <div class="carre"></div>
-                            <div class="carre"></div>
-                            <div class="carre"></div>
-                            <div class="carre"></div>
-                            <div class="carre"></div>
-                            <div class="carre"></div>
+                            <?php
+                                $skills = $bdd -> query("SELECT * FROM skills");
+                                while($donSkills= $skills->fetch()){
+                                    echo '<div class="carre" >';
+                                    echo '<img  src="../upload/'.$donSkills['image'].'" alt="image de '.$donSkills['skills'].'" >';
+                                    echo '</div>';
+                                }
+                            ?>
+                            
+                            
                             
                         </div>
                     <h6>Personnalité</h6>
@@ -235,24 +244,20 @@
         </div>
             <div class="container overflow-hidden">
                 <div class="row g-3">
-                    <div class="col-md-4">
-                        <div class="cadre"></div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="cadre"></div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="cadre"></div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="cadre"></div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="cadre"></div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="cadre"></div>
-                    </div>
+
+                <?php
+                        $works = $bdd -> query("SELECT * FROM works");
+                        while($donWorks = $works ->fetch()){
+                            echo '<div class="col-md-4" >';
+                                echo '<div class="cadre" >';
+                                    echo '<img src="../upload/'.$donWorks['image'].'" alt="image de '.$donWorks['title'].'" >';
+                                echo '</div>';
+                            echo '</div>';
+
+                            
+                        }
+                    ?>
+                    
                 </div>
                 <button type="button" id="ensav" class="btn btn-primary">En voir plus</button>
               </div>

@@ -26,7 +26,7 @@
     <div class="row">
         <div class="col-4">
             <a href="index.php" class="btn btn-secondary my-1">Retour</a><br>
-            <a href="addSkills.php" class="btn btn-success ">Ajouter une compétence</a>
+            
         </div>
     </div>
     <div class="container">
@@ -74,6 +74,9 @@
                 ?>
             </tbody>
         </table>
+        <div class="row">
+            <a href="addSkills.php" class="btn btn-success ">Ajouter une compétence</a>
+        </div>
 </div>
 
 </div>
