@@ -9,65 +9,39 @@
        // tester si il y a le get id dans l'URL
        if(!isset($_GET['id']))
        {
-           header("LOCATION:works.php");
+           header("LOCATION:skills.php");
        }
      
        // récup les données qui corresponde à l'id
        $id = htmlspecialchars($_GET['id']);
        require "../connexion.php";
-        $req = $bdd->prepare("SELECT * FROM works WHERE id=?");
+        $req = $bdd->prepare("SELECT * FROM skills WHERE id=?");
         $req->execute([$id]);
         // tester s'il existe dans la bdd
         if(!$don = $req->fetch())
         {
             $req->closeCursor();
-            header("LOCATION:works.php");
+            header("LOCATION:skills.php");
         }
         $req->closeCursor();
 
 
      // tester si le formulaire est envoyé 
-     if(isset($_POST['title']))
+     if(isset($_POST['skills']))
      {
         $err=0;
         //var_dump($_POST);
         //var_dump($_FILES);
 
         //traitement des valeurs 
-        if(empty($_POST['title'])) //   if($_POST['title']=="")
+        if(empty($_POST['skills'])) //   if($_POST['title']=="")
         {
             $err=1;
         }else{
-            $title = htmlspecialchars($_POST['title']);
+            $skills = htmlspecialchars($_POST['skills']);
         }
       
-        if(empty($_POST['date']))
-        {
-            $err=2;
-        }else{
-            $date = htmlspecialchars($_POST['date']);
-        }
-
-        if(empty($_POST['category']))
-        {
-            $err=3;
-        }else{
-            $category = htmlspecialchars($_POST['category']);
-        }
-
-        if(empty($_POST['description']))
-        {
-            $err=4;
-        }else{
-            $description= htmlspecialchars($_POST['description']);
-        }
- 
-        if(empty($_POST['technic']))
-        {
-            $err=5;
-        }else{
-            $technic= htmlspecialchars($_POST['technic']);
-        }
+        
 
       
         if($err===0)
@@ -112,42 +86,36 @@
                                 unlink("../upload/".$don['pdf']);
                             }
                             // modification avec pdf
-                            $upload = $bdd->prepare("UPDATE works SET title=:title, date=:date, category=:category,description=:description, technic=:technic, pdf=:pdf WHERE id=:myid");
+                            $upload = $bdd->prepare("UPDATE skills SET skills=:skills,  pdf=:pdf WHERE id=:myid");
                             $upload->execute([
-                                ":title" => $title,
-                                ":date" => $date,
-                                ":category" => $category,
-                                ":description" => $description,
-                                ":technic" => $technic,
+                                ":skills" => $skills,
+                            
                                 ":myid" => $id,
                                 ":pdf"=>$pdfcpt
                             ]);
                             $upload->closeCursor();
                             // redirection vers oeuvres.php avec message success 
-                            header("LOCATION:works.php?update=success&id=".$id);
+                            header("LOCATION:skills.php?update=success&id=".$id);
                         }
                         else{
-                            header("LOCATION:updateWorks.php?id=".$id."&upload=error");
+                            header("LOCATION:updateSkills.php?id=".$id."&upload=error");
                         }
                         
                     }else{
-                        header("LOCATION:updateWorks.php?id=".$id."&fileerror=".$fileError);
+                        header("LOCATION:updateSkills.php?id=".$id."&fileerror=".$fileError);
                     }
 
                 }else{
                     // modification sans toucher au pdf
-                    $upload = $bdd->prepare("UPDATE works SET title=:title, date=:date, category=:category,description=:description, technic=:technic, WHERE id=:myid");
+                    $upload = $bdd->prepare("UPDATE skills SET skills=:skills WHERE id=:myid");
                     $upload->execute([
-                        ":title" => $title,
-                        ":date" => $date,
-                        ":category" => $category,
-                        ":description" => $description,
-                        ":technic" => $technic,
+                        ":skills" => $skills,
+                        
                         ":myid" => $id
                     ]);
                     $upload->closeCursor();
                     // redirection vers oeuvres.php avec message success 
-                    header("LOCATION:works.php?update=success&id=".$id);
+                    header("LOCATION:skills.php?update=success&id=".$id);
                 }
 
 
@@ -232,19 +200,17 @@
                             {
 
                                 // faire un update des info
-                                    $upload = $bdd->prepare("UPDATE works SET title=:title, date=:date, category=:category, image=:image, description=:description, technic=:technic WHERE id=:myid");
+                                    $upload = $bdd->prepare("UPDATE skills SET skills=:skills,  image=:image WHERE id=:myid");
                                     $upload->execute([
-                                        ":title" => $title,
-                                        ":date" => $date,
-                                        ":category" => $category,
+                                        ":skills" => $skills,
+                                       
                                         ":image" => $fichiercpt,
-                                        ":description" => $description,
-                                        ":technic" => $technic,
+                                        
                                         ":myid" => $id
                                     ]);
                                     $upload->closeCursor();
                                     // redirection vers oeuvres.php avec message success 
-                                    header("LOCATION:works.php?update=success&id=".$id);
+                                    header("LOCATION:skills.php?update=success&id=".$id);
                             }else{
 
                                 if(move_uploaded_file($_FILES['pdf']['tmp_name'], $dossier.$pdfcpt))
@@ -254,23 +220,21 @@
                                     {
                                         unlink("../upload/".$don['pdf']);
                                     }
-                                    $upload = $bdd->prepare("UPDATE works SET title=:title, date=:date, category=:category, image=:image, description=:description, technic=:technic, pdf=:pdf WHERE id=:myid");
+                                    $upload = $bdd->prepare("UPDATE skills SET skills=:skills, image=:image WHERE id=:myid");
                                     $upload->execute([
-                                        ":title" => $title,
-                                        "date"=>$date,
-                                        ":category" => $category,
+                                        ":skills" => $skills,
+                                        
                                         ":image" => $fichiercpt,
-                                        ":description" => $description,
-                                        "technic"=> $technic,
+                                        
                                         ":myid" => $id, 
                                         ":pdf"=>$pdfcpt
                                     ]);
                                     $upload->closeCursor();
                                     // redirection vers oeuvres.php avec message success 
-                                    header("LOCATION:works.php?update=success&id=".$id);
+                                    header("LOCATION:skills.php?update=success&id=".$id);
 
                                 }else{
-                                    header("LOCATION:updateWorks.php?id=".$id."&upload=error");
+                                    header("LOCATION:updateSkills.php?id=".$id."&upload=error");
                                 }
 
 
@@ -280,21 +244,21 @@
 
                          
                         }else{
-                            header("LOCATION:updateWorks.php?id=".$id."&upload=error");
+                            header("LOCATION:updateSkills.php?id=".$id."&upload=error");
                         }
                     }else{
-                        header("LOCATION:updateWorks.php?id=".$id."&imgerror=".$imageError);
+                        header("LOCATION:updateSkills.php?id=".$id."&imgerror=".$imageError);
                     }
             }     
         }else{
             
             // renvoyer l'utilisateur vers le formulaire avec l'info de l'erreur
-            header("LOCATION:updateWorks.php?id=".$id."&error=".$err);
+            header("LOCATION:updateSkills.php?id=".$id."&error=".$err);
         }
 
 
      }else{
-         header('LOCATION:updateWorks.php?id='.$id);
+         header('LOCATION:updateSkills.php?id='.$id);
      }
      
 
