@@ -53,8 +53,8 @@
         </div>
         
         <div class="input-group mb-3">
-            <input type="file" class="form-control" id="inputGroupFile01" name="image">
-            <label class="input-group-text" for="inputGroupFile01">Image</label>
+            <input type="file" class="form-control" id="inputGroupFile03" name="image" required>
+            <label class="input-group-text" for="inputGroupFile03">Image</label>
         </div>
         <div class="form-group">
             <input type="submit" value="Ajouter" class="btn btn-success">
