@@ -45,7 +45,7 @@
         {
             $err=5;
         }else{
-            $description= htmlspecialchars($_POST['technic']);
+            $technic= htmlspecialchars($_POST['technic']);
         }
 
         if($err===0)
@@ -128,16 +128,16 @@
                     {
                         // le fichier est dans le dossier
                         // insertion dans la base de données
-                        $insert = $bdd->prepare("INSERT INTO works(title,date,category,description,technic,image) VALUES(:title,:date,:category,:description,:technic,:image)");
+                        $insert = $bdd->prepare("INSERT INTO works(title,date,category,description,technic,image) VALUES (:title,:date,:category,:description,:technic,:image)");
                         $insert->execute([
                             ":title" => $title,
                             ":date"=>$date,
                             ":category" => $category,
                             ":description" => $description,
                             ":technic" => $technic,
-                            ":image" => $image,
-                            
+                            ":image" => $fichiercpt,
                         ]);
+
                         $insert->closeCursor();
                         // redirection vers oeuvres.php avec message success 
                         header("LOCATION:works.php?add=success");
@@ -153,7 +153,7 @@
                                 ":category" => $category,
                                 ":description" => $description,
                                 ":technic" => $technic,
-                                ":image" => $image,
+                                ":image" => $fichiercpt,
                                 ":pdf"=> $pdfcpt,
                             ]);
                             $insert->closeCursor();

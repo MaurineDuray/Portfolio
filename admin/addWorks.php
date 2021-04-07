@@ -69,18 +69,18 @@
         </div>
         <div class="form-group  mb-3">
             <label for="description">Description:</label>
-            <textarea name="description" id="description" class="form-control" placeholder="description"></textarea>
+            <textarea name="description" id="description" class="form-control" placeholder="Description"></textarea>
         </div>
         <div class="form-group  mb-3">
             <label for="technic">Techniques:</label>
-            <textarea name="technic" id="technic" class="form-control" placeholder="techniques"></textarea>
+            <textarea name="technic" id="technic" class="form-control" placeholder="Techniques"></textarea>
         </div>
         <div class="input-group mb-3">
-            <input type="file" class="form-control" id="image" name="image">
-            <label class="input-group-text" for="inputGroupFile">Image</label>
+            <input type="file" class="form-control" id="inputGroupFile01" name="image">
+            <label class="input-group-text" for="inputGroupFile01">Image</label>
         </div>
         <div class="input-group mb-3">
-            <input type="file" class="form-control" id="pdf" name="pdf">
+            <input type="file" class="form-control" id="inputGroupFile02" name="pdf">
             <label class="input-group-text" for="inputGroupFile02">PDF</label>
         </div>
         <div class="form-group">
