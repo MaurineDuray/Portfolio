@@ -32,6 +32,7 @@
     <a href="../index.php" class="btn btn-success my-1">Retour au site</a>
     <div class="row">
         <div class="col-4">
+            <a href="message.php">Boîte de réception</a><br>
             <a href="works.php">Gestion des travaux</a><br>
             <a href="admin.php">Gestion des administrateurs</a><br>
             <a href="skills.php">Gestion des compétences</a>

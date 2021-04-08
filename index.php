@@ -246,7 +246,7 @@
                 <div class="row g-3">
 
                 <?php
-                        $works = $bdd -> query("SELECT * FROM works");
+                        $works = $bdd -> query("SELECT * FROM works ORDER BY date DESC LIMIT 6");
                         while($donWorks = $works ->fetch()){
                             echo '<div class="col-md-4" >';
                                 echo '<div class="cadre" style="display: flex;
@@ -255,7 +255,7 @@
                                 echo '</div>';
                             echo '</div>';
 
-                            
+  
                         }
                     ?>
                     
@@ -282,14 +282,32 @@
             <div class="droite4 col-lg-6">
                 <h2>CONTACT</h2>
                 <h4>Get in touch</h4>
+               
                <div class="trou">
-                   <form method="POST" action="treatmentAddMessage.php">
-                        <input type="text" placeholder="Nom / Prénom" name="name">
-                        <input type="email" placeholder="Votre adresse e-mail" name="email">
-                        <input type="text" placeholder="Sujet du message" name="subject">
-                        <textarea name="" id="" cols="30" rows="10" placeholder="Votre message" name="message"></textarea>
+                   <form method="POST" action="admin/treatmentAddMessage.php">
+                        <input type="text" placeholder="Nom / Prénom" name="name" id="name">
+                        <input type="email" placeholder="Votre adresse e-mail" name="email" id="email">
+                        <input type="text" placeholder="Sujet du message" name="subject" id="subject">
+                        <textarea name="message" id="message" cols="30" rows="10" placeholder="Votre message"  ></textarea>
                         <input type="submit" value="ENVOYER">  
+
+                        
                    </form>
+                   <?php
+                            if(isset($_GET['success']))
+                            {
+                                echo "<div class='row col-9'>" ;
+                                echo "<div class='alert alert-success'>Votre message a bien été envoyé ! </div>"; 
+                                echo "</div >" ;
+                            }
+                            if(isset($_GET['error']))
+                            {
+                                echo "<div class='row col-9'>" ;
+                                echo "<div class='alert alert-danger'> Il y a eu une erreur dans l'envoi de votre message. </div>"; 
+                                echo "</div >" ;
+                            }
+                            
+                        ?>
                </div>
             </div>
         </div>
