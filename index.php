@@ -163,7 +163,7 @@
                                 $skills = $bdd -> query("SELECT * FROM skills");
                                 while($donSkills= $skills->fetch()){
                                     echo '<div class="carre" >';
-                                    echo '<img  src="../upload/'.$donSkills['image'].'" alt="image de '.$donSkills['skills'].'" >';
+                                    echo '<img style="width:40px; height:40px;" src="upload/'.$donSkills['image'].'" alt="image de '.$donSkills['skills'].'" >';
                                     echo '</div>';
                                 }
                             ?>
@@ -249,8 +249,9 @@
                         $works = $bdd -> query("SELECT * FROM works");
                         while($donWorks = $works ->fetch()){
                             echo '<div class="col-md-4" >';
-                                echo '<div class="cadre" >';
-                                    echo '<img src="../upload/'.$donWorks['image'].'" alt="image de '.$donWorks['title'].'" >';
+                                echo '<div class="cadre" style="display: flex;
+                                justify-content: center; background-image: url(upload/'.$donWorks['image'].'); background-position: center center; background-size: cover">';
+                                   
                                 echo '</div>';
                             echo '</div>';
 
@@ -282,10 +283,10 @@
                 <h2>CONTACT</h2>
                 <h4>Get in touch</h4>
                <div class="trou">
-                   <form action="POST">
-                        <input type="text" placeholder="Nom" name="nom">
-                        <input type="text" placeholder="Prénom" name="prenom">
-                        <input type="text" placeholder="Sujet du message" name="sujet">
+                   <form method="POST" action="treatmentAddMessage.php">
+                        <input type="text" placeholder="Nom / Prénom" name="name">
+                        <input type="email" placeholder="Votre adresse e-mail" name="email">
+                        <input type="text" placeholder="Sujet du message" name="subject">
                         <textarea name="" id="" cols="30" rows="10" placeholder="Votre message" name="message"></textarea>
                         <input type="submit" value="ENVOYER">  
                    </form>

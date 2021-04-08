@@ -33,7 +33,7 @@
     <div class="row">
         <div class="col-4">
             <a href="works.php">Gestion des travaux</a><br>
-            <a href="users.php">Gestion des administrateurs</a><br>
+            <a href="admin.php">Gestion des administrateurs</a><br>
             <a href="skills.php">Gestion des compétences</a>
         </div>
     </div>
