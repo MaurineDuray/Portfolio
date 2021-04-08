@@ -25,7 +25,7 @@
             // tester s'il y a une correspondance dans la bdd
             if($don = $req->fetch())
             {
-                if(password_verify($_POST['password'],$don['password']))
+                if(password_verify($_POST['password'],$don['mdp']))
                 {
                     /* création d'une variable de session avec session_start() tout en haut */
                    $_SESSION['login']=$don['login'];

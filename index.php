@@ -65,6 +65,9 @@
                 })
             })
             
+            /* Scroll menu change de couleur */
+            
+
 
         })
     </script>
@@ -250,7 +253,7 @@
                         while($donWorks = $works ->fetch()){
                             echo '<div class="col-md-4" >';
                                 echo '<div class="cadre" style="display: flex;
-                                justify-content: center; background-image: url(upload/'.$donWorks['image'].'); background-position: center center; background-size: cover">';
+                                justify-content: center; background-image: url(upload/'.$donWorks['image'].'); background-position: center center; background-size: contain; background-repeat:no-repeat; background-color: rgb(240, 240, 240, 05)">';
                                    
                                 echo '</div>';
                             echo '</div>';
@@ -260,7 +263,7 @@
                     ?>
                     
                 </div>
-                <button type="button" id="ensav" class="btn btn-primary">En voir plus</button>
+                <a href="galerie.php"><button type="button" id="ensav" class="btn btn-primary">En voir plus</button></a>
               </div>
            
         

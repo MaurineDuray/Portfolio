@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Bellota+Text:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap');
+*{
+    margin: 0;
+    padding: 0; 
+}
+
+html, body{
+    text-align: center;
+}
+
+h1{
+    font-family: 'Bellota Text', cursive;
+    font-size: 5vh;
+    color: rgb(0, 161, 153);
+    margin-top: 50px;
+}
+h3{
+    font-family: 'Noto Sans JP', sans-serif;
+    color: rgb(0, 161, 153);
+}
+.fleur{
+    position: absolute;
+    width: 70%;
+    z-index: 1;
+    top: 0;
+}
+.fleur img{
+    margin-left: 50%;
+    width: 100%;
+    opacity: 10%;
+    top:0px;
+}
+#dashboard{
+    margin-top: 30vh;
+    position: absolute;
+    z-index: 99;
+}
+a{
+    color: black;
+    text-decoration: none;
+    
+    
+}
+.contenu{
+    z-index:100;
+    position: absolute;
+}

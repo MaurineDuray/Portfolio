@@ -146,6 +146,9 @@ body{
     grid-template-columns: 1fr 9fr;
 
 }
+.principalAnim{
+    background-color:rgba(0, 161, 154, 1) !important;
+}
 .logo img{
     height: 70px;
     margin-top: 10px;
@@ -171,6 +174,9 @@ body{
 
 #principal ul li a:hover{
     color: black;
+}
+#principalHover{
+    color: white;
 }
 
 #principal ul li a{
@@ -509,7 +515,7 @@ body{
 
 .cadre{
     background-color:transparent;
-    height: 23vh;
+    height: 30vh;
     padding: 20px;
 }
 
@@ -691,7 +697,14 @@ footer .container{
     padding-top: 10px;
 }
 
-
+#slideGal{
+    background-color:rgb(255, 255, 255);
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    margin-top: 500px;
+    
+}
 
 
 
