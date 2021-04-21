@@ -69,20 +69,23 @@
             
 
             const navGroup = document.querySelectorAll('#Travaux ul .row li')
-            console.log(navGroup)
+            
             navGroup.forEach(navi => {
             navi.addEventListener('click',()=>{
-                const target = document.querySelector(navi.dataset.nom)
                 
-                const galGroup = document.querySelectorAll(".galgroup")
+                
+                const galGroup = document.querySelectorAll('.galgroup')
+                const target = document.querySelector(navi.dataset.nom) 
                 galGroup.forEach(groupe => {
                     groupe.classList.remove('galopen')
+                    
                 })
-                target.classList.add("galopen")
+                target.classList.toggle('galopen')
+                
                 
             })
         })
-
+        console.log(navGroup)
         
 
 

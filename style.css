@@ -456,8 +456,8 @@ body{
 }
 
 .galopen{
-    left: 0 !important;
-    z-index: 4 !important;
+    left: 0 ;
+    /*z-index: 4 !important;*/
 }
 
 #slide3 h2{
