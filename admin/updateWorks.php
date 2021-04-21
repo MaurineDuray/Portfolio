@@ -86,7 +86,7 @@
                 <?php
                     if($don['category']=="dessinIllu")
                     {
-                        echo '<option value="dessinIllu">Dessin et illustration</option>';
+                        echo '<option value="dessinIllu" selected>Dessin et illustration</option>';
                         echo '<option value="retoucheGraph">Retouches graphiques</option>';
                         echo '<option value="dessinVectoriel">Dessin vectoriel</option>';
                         echo '<option value="pao">Mise en page - PAO</option>';
@@ -96,7 +96,7 @@
                     } elseif($don['category']=="retoucheGraph")
                     {
                         echo '<option value="dessinIllu">Dessin et illustration</option>';
-                        echo '<option value="retoucheGraph">Retouches graphiques</option>';
+                        echo '<option value="retoucheGraph" selected>Retouches graphiques</option>';
                         echo '<option value="dessinVectoriel">Dessin vectoriel</option>';
                         echo '<option value="pao">Mise en page - PAO</option>';
                         echo '<option value="web">Web et web design</option>';
@@ -106,7 +106,7 @@
                     {
                         echo '<option value="dessinIllu">Dessin et illustration</option>';
                         echo '<option value="retoucheGraph">Retouches graphiques</option>';
-                        echo '<option value="dessinVectoriel">Dessin vectoriel</option>';
+                        echo '<option value="dessinVectoriel" selected>Dessin vectoriel</option>';
                         echo '<option value="pao">Mise en page - PAO</option>';
                         echo '<option value="web">Web et web design</option>';
                         echo '<option value="animation">Animation</option>';
@@ -117,7 +117,7 @@
                         echo '<option value="dessinIllu">Dessin et illustration</option>';
                         echo '<option value="retoucheGraph">Retouches graphiques</option>';
                         echo '<option value="dessinVectoriel">Dessin vectoriel</option>';
-                        echo '<option value="pao">Mise en page - PAO</option>';
+                        echo '<option value="pao" selected>Mise en page - PAO</option>';
                         echo '<option value="web">Web et web design</option>';
                         echo '<option value="animation">Animation</option>';
                         echo '<option value="autres">Divers</option>';
@@ -128,7 +128,7 @@
                         echo '<option value="retoucheGraph">Retouches graphiques</option>';
                         echo '<option value="dessinVectoriel">Dessin vectoriel</option>';
                         echo '<option value="pao">Mise en page - PAO</option>';
-                        echo '<option value="web">Web et web design</option>';
+                        echo '<option value="web" selected>Web et web design</option>';
                         echo '<option value="animation">Animation</option>';
                         echo '<option value="autres">Divers</option>';
                     }
@@ -139,7 +139,7 @@
                         echo '<option value="dessinVectoriel">Dessin vectoriel</option>';
                         echo '<option value="pao">Mise en page - PAO</option>';
                         echo '<option value="web">Web et web design</option>';
-                        echo '<option value="animation">Animation</option>';
+                        echo '<option value="animation" selected>Animation</option>';
                         echo '<option value="autres">Divers</option>';
                     }else{
                         echo '<option value="dessinIllu">Dessin et illustration</option>';
@@ -148,7 +148,7 @@
                         echo '<option value="pao">Mise en page - PAO</option>';
                         echo '<option value="web">Web et web design</option>';
                         echo '<option value="animation">Animation</option>';
-                        echo '<option value="autres">Divers</option>';
+                        echo '<option value="autres" selected>Divers</option>';
                     }
                 ?>
             </select>

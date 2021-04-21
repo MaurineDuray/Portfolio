@@ -29,7 +29,7 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Museum</h1>
+    <h1>Mon portfolio</h1>
     <?php
         /* <?php echo $don['title'] ?> */
     ?>

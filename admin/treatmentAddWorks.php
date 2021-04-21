@@ -11,7 +11,6 @@
         $err=0;
         //var_dump($_POST);
         //var_dump($_FILES);
-
         //traitement des valeurs 
         if(empty($_POST['title'])) //   if($_POST['title']=="")
         {
@@ -26,28 +25,24 @@
         }else{
             $date = htmlspecialchars($_POST['date']);
         }
-
         if(empty($_POST['category']))
         {
             $err=3;
         }else{
-            $category = htmlspecialchars($_POST['category']);
+            $category= htmlspecialchars($_POST['category']);
         }
-
         if(empty($_POST['description']))
         {
             $err=4;
         }else{
-            $description= htmlspecialchars($_POST['description']);
+            $description = htmlspecialchars($_POST['description']);
         }
-
         if(empty($_POST['technic']))
         {
-            $err=5;
+            $err=4;
         }else{
-            $technic= htmlspecialchars($_POST['technic']);
+            $technic = htmlspecialchars($_POST['technic']);
         }
-
         if($err===0)
         {
             // traitement de l'image
@@ -57,17 +52,16 @@
             $taille = filesize($_FILES['image']['tmp_name']);
             $extensions = ['.png', '.jpg', '.jpeg', '.gif', '.svg'];
             $extension = strrchr($_FILES['image']['name'],'.');
-
             /* tester l'extension du fichier en comparaison du tableau $extensions */
             /* in_array permet de savoir si le 1er paramètre se retrouve dans le 2ème paramètre qui doit être un tableau */
             if(!in_array($extension, $extensions))
             {
-                $imageError = "wrong-extension";
+                $fileError = "wrong-extension";
             }
 
             if($taille > $tailleMax)
             {
-                $imageError = "size";
+                $fileError = "size";
             }
 
             // gestion du PDF 
@@ -76,14 +70,12 @@
                 $pdf = basename($_FILES["pdf"]["name"]);
                 $pdfTaille = filesize($_FILES['pdf']['tmp_name']);
                 $pdfExtension = strrchr($_FILES['pdf']['name'],'.');
-
                   /* tester l'extension du fichier en comparaison du tableau $extensions */
                 /* in_array permet de savoir si le 1er paramètre se retrouve dans le 2ème paramètre qui doit être un tableau */
                 if($pdfExtension!=".pdf")
                 {
                     $fileError = "pdf-wrong-extension";
                 }
-
                 if($pdftaille > $tailleMax)
                 {
                     $fileError = "pdf-size";
@@ -92,32 +84,26 @@
 
 
 
-            /* si $imageError n'existe pas  */
+            
+            /* si $fileError n'existe pas  */
             if(!isset($fileError))
             {
                 // traitement et formatage du nom du fichier envoyé
                 $fichier = strtr($fichier, 
                 'ÀÁÂÃÄÅÇÈÉÊËÌÍÎÏÒÓÔÕÖÙÚÛÜÝàáâãäåçèéêëìíîïðòóôõöùúûüýÿ', 
                 'AAAAAACEEEEIIIIOOOOOUUUUYaaaaaaceeeeiiiioooooouuuuyy');
-
                 // remplacer les caractères spéciaux autre que les lettres en - (REGEX)
                 $fichier = preg_replace('/([^.a-z0-9]+)/i','-',$fichier);
-
                 // traitement des fichiers doublons
                 $fichiercpt = rand().$fichier;
-
                 if(!empty($_FILES['pdf']['tmp_name']))
                 {
                     $pdf = strtr($pdf, 
                     'ÀÁÂÃÄÅÇÈÉÊËÌÍÎÏÒÓÔÕÖÙÚÛÜÝàáâãäåçèéêëìíîïðòóôõöùúûüýÿ', 
                     'AAAAAACEEEEIIIIOOOOOUUUUYaaaaaaceeeeiiiioooooouuuuyy');
-
                     $pdf = preg_replace('/([^.a-z0-9]+)/i','-',$pdf);
-
                     $pdfcpt = rand().$pdf;
                 }
-
-
                 // déplacement du fichier temporaire dans le dossier 'upload' avec son nouveau nom 
                 // attention avec cette méthode, il y a un risque d'image perdue si une erreur arrive lors du déplacement du fichier. 
                 if(move_uploaded_file($_FILES['image']['tmp_name'], $dossier.$fichiercpt))
@@ -128,16 +114,17 @@
                     {
                         // le fichier est dans le dossier
                         // insertion dans la base de données
-                        $insert = $bdd->prepare("INSERT INTO works(title,date,category,description,technic,image) VALUES (:title,:date,:category,:description,:technic,:image)");
+                        $insert = $bdd->prepare("INSERT INTO works(title,date,category,description,technic,image) VALUES(:title,:date,:category,:description,:technic,:image)");
                         $insert->execute([
                             ":title" => $title,
-                            ":date"=>$date,
+                            ":date" => $date,
                             ":category" => $category,
                             ":description" => $description,
                             ":technic" => $technic,
                             ":image" => $fichiercpt,
+                            
+                            
                         ]);
-
                         $insert->closeCursor();
                         // redirection vers oeuvres.php avec message success 
                         header("LOCATION:works.php?add=success");
@@ -149,12 +136,12 @@
                             $insert = $bdd->prepare("INSERT INTO works (title,date,category,description,technic,image,pdf) VALUES(:title,:date,:category,:description,:technic,:image,:pdf)");
                             $insert->execute([
                                 ":title" => $title,
-                                ":date"=>$date,
+                                ":date" => $date,
                                 ":category" => $category,
                                 ":description" => $description,
                                 ":technic" => $technic,
                                 ":image" => $fichiercpt,
-                                ":pdf"=> $pdfcpt,
+                                ":pdf"=>$pdfcpt
                             ]);
                             $insert->closeCursor();
                             // redirection vers oeuvres.php avec message success 
@@ -162,12 +149,7 @@
                         }else{
                             header("LOCATION:addWorks.php?upload=error");
                         }
-
-
-
                     }
-
-
                 }else{
                     header("LOCATION:addWorks.php?upload=error");
                 }
@@ -179,11 +161,8 @@
             // renvoyer l'utilisateur vers le formulaire avec l'info de l'erreur
             header("LOCATION:addWorks.php?error=".$err);
         }
-
-
      }else{
          header('LOCATION:addWorks.php');
      }
      
-
 ?>

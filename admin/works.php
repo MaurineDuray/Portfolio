@@ -21,10 +21,8 @@
     <title>Administration</title>
 </head>
 <body>
-<div class="fleur">
-        <img src="../images/fleurVerte.png" alt="">
-    </div>
-<div class="container-fluid  contenu">
+
+<div class="container-fluid">
     <h1>Administration de mon portfolio</h1>
     <h3>Bonjour <?php echo $_SESSION['login'] ?></h3>
     <a href="dashboard.php?deco=ok" class="btn btn-danger my-1">Déconnexion</a>

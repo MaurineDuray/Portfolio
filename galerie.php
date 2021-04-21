@@ -124,12 +124,12 @@
             <div class="fleurslide3"><img src="images/fleurVerte.png" alt=""></div>
             <nav id="TravauxResp">
                 <ul>
-                    <li class="col-md-2 "><a class="item" href="#slide3">Dessin et illustration</a></li>
-                    <li class="col-md-2 "><a class="item" href="#slide3">Retouches graphiques  </a></li>
-                    <li class="col-md-2 "><a class="item" href="#slide3">Dessin vectoriel</a></li>
-                    <li class="col-md-2 "><a class="item" href="#slide3">Mise en page PAO</a></li>
-                    <li class="col-md-2 "><a class="item" href="#slide3">Web - WebDesign</a></li>
-                    <li class="col-md-2 "><a class="item" href="#slide3">Animation</a></li>  
+                    <li data-id="#group1" class="col-md-2 "><a class="item" href="#slide3">Dessin et illustration</a></li>
+                    <li data-id="#group2" class="col-md-2 "><a class="item" href="#slide3">Retouches graphiques  </a></li>
+                    <li data-id="#group3" class="col-md-2 "><a class="item" href="#slide3">Dessin vectoriel</a></li>
+                    <li data-id="#group4" class="col-md-2 "><a class="item" href="#slide3">Mise en page PAO</a></li>
+                    <li data-id="#group5" class="col-md-2 "><a class="item" href="#slide3">Web - WebDesign</a></li>
+                    <li data-id="#group6" class="col-md-2 "><a class="item" href="#slide3">Animation</a></li>  
                 </ul>
             </nav>
         </div>
@@ -143,12 +143,12 @@
             <nav id="Travaux">
                 <ul>
                     <div class="row g-0 justify-content-evently">
-                        <li class="col-2 md-0"><a href="#slide3">Dessin et illustration</a></li>
-                        <li class="col-2"><a href="#slide3">Retouches graphiques  </a></li>
-                        <li class="col-2"><a href="#slide3">Dessin vectoriel</a></li>
-                        <li class="col-2"><a href="#slide3">Mise en page PAO</a></li>
-                        <li class="col-2"><a href="#slide3">Web - WebDesign</a></li>
-                        <li class="col-2"><a href="#slide3">Animation</a></li>  
+                        <li data-id="#group1" class="col-2 md-0"><a href="#slide3">Dessin et illustration</a></li>
+                        <li data-id="#group2" class="col-2"><a href="#slide3">Retouches graphiques  </a></li>
+                        <li data-id="#group3" class="col-2"><a href="#slide3">Dessin vectoriel</a></li>
+                        <li data-id="#group4" class="col-2"><a href="#slide3">Mise en page PAO</a></li>
+                        <li data-id="#group5" class="col-2"><a href="#slide3">Web - WebDesign</a></li>
+                        <li data-id="#group6" class="col-2"><a href="#slide3">Animation</a></li>  
                     </div>  
                 
                 </ul>
@@ -174,25 +174,101 @@
                 </div>
         </div>
             <div class="container overflow-hidden">
-                <div class="row g-3">
-
-                <?php
-                        $works = $bdd -> query("SELECT * FROM works ");
+                <div class="row g-3 gal-group gal-open" id="gal0">
+                    <?php
+                        $works = $bdd -> query("SELECT * FROM works");
                         while($donWorks = $works ->fetch()){
                             echo '<div class="col-md-4" >';
-                            echo '<div class="cadre" style="display: flex;
-                            justify-content: center; background-image: url(upload/'.$donWorks['image'].'); background-position: center center; background-size: contain; background-repeat:no-repeat; background-color: rgb(240, 240, 240)">';  
-                                echo '</div>';
+                                echo '<a href="project.php?id='.$donWorks["id"].'">';
+                                echo '<div class="cadre" style="display: flex; justify-content: center; background-image: url(upload/'.$donWorks["image"].'); background-position: center center; background-size: contain; background-repeat:no-repeat; background-color: rgb(240, 240, 240, 05)">';
+                                   
+                                echo '</div></a>';
                             echo '</div>';
-
-  
                         }
                     ?>
-                    
                 </div>
-                 <a id="retourGalerie" style="padding-bottom: 20px" href="index.php#slide3">Retour</a>
+
+                <div class="row g-3 gal-group" id="gal1">
+                        <?php
+                            $works = $bdd -> query("SELECT * FROM works WHERE category = 'dessinIllu' ");
+                            while($donWorks = $works ->fetch()){
+                                echo '<div class="col-md-4" >';
+                                    echo '<a href="project.php?id='.$donWorks["id"].'">';
+                                    echo '<div class="cadre" style="display: flex; justify-content: center; background-image: url(upload/'.$donWorks["image"].'); background-position: center center; background-size: contain; background-repeat:no-repeat; background-color: rgb(240, 240, 240, 05)">';
+                                    
+                                    echo '</div></a>';
+                                echo '</div>';
+                            }
+                        ?>
+                    </div>
+                    <div class="row g-3 gal-group" id="gal2">
+                        <?php
+                            $works = $bdd -> query("SELECT * FROM works WHERE category = 'retoucheGraph'");
+                            while($donWorks = $works ->fetch()){
+                                echo '<div class="col-md-4" >';
+                                    echo '<a href="project.php?id='.$donWorks["id"].'">';
+                                    echo '<div class="cadre" style="display: flex; justify-content: center; background-image: url(upload/'.$donWorks["image"].'); background-position: center center; background-size: contain; background-repeat:no-repeat; background-color: rgb(240, 240, 240, 05)">';
+                                    
+                                    echo '</div></a>';
+                                echo '</div>';
+                            }
+                        ?>
+                    </div>
+                    <div class="row g-3 gal-group" id="gal3">
+                        <?php
+                            $works = $bdd -> query("SELECT * FROM works WHERE category = 'dessinVectoriel'");
+                            while($donWorks = $works ->fetch()){
+                                echo '<div class="col-md-4" >';
+                                    echo '<a href="project.php?id='.$donWorks["id"].'">';
+                                    echo '<div class="cadre" style="display: flex; justify-content: center; background-image: url(upload/'.$donWorks["image"].'); background-position: center center; background-size: contain; background-repeat:no-repeat; background-color: rgb(240, 240, 240, 05)">';
+                                    
+                                    echo '</div></a>';
+                                echo '</div>';
+                            }
+                        ?>
+                    </div>
+                    <div class="row g-3 gal-group" id="gal4">
+                        <?php
+                            $works = $bdd -> query("SELECT * FROM works WHERE category = 'pao'");
+                            while($donWorks = $works ->fetch()){
+                                echo '<div class="col-md-4" >';
+                                    echo '<a href="project.php?id='.$donWorks["id"].'">';
+                                    echo '<div class="cadre" style="display: flex; justify-content: center; background-image: url(upload/'.$donWorks["image"].'); background-position: center center; background-size: contain; background-repeat:no-repeat; background-color: rgb(240, 240, 240, 05)">';
+                                    
+                                    echo '</div></a>';
+                                echo '</div>';
+                            }
+                        ?>
+                    </div>
+                    <div class="row g-3 gal-group" id="gal5">
+                        <?php
+                            $works = $bdd -> query("SELECT * FROM works WHERE category = 'web'");
+                            while($donWorks = $works ->fetch()){
+                                echo '<div class="col-md-4" >';
+                                    echo '<a href="project.php?id='.$donWorks["id"].'">';
+                                    echo '<div class="cadre" style="display: flex; justify-content: center; background-image: url(upload/'.$donWorks["image"].'); background-position: center center; background-size: contain; background-repeat:no-repeat; background-color: rgb(240, 240, 240, 05)">';
+                                    
+                                    echo '</div></a>';
+                                echo '</div>';
+                            }
+                        ?>
+                    </div>
+                    <div class="row g-3 gal-group" id="gal6">
+                        <?php
+                            $works = $bdd -> query("SELECT * FROM works WHERE category = 'animation'");
+                            while($donWorks = $works ->fetch()){
+                                echo '<div class="col-md-4" >';
+                                    echo '<a href="project.php?id='.$donWorks["id"].'">';
+                                    echo '<div class="cadre" style="display: flex; justify-content: center; background-image: url(upload/'.$donWorks["image"].'); background-position: center center; background-size: contain; background-repeat:no-repeat; background-color: rgb(240, 240, 240, 05)">';
+                                    
+                                    echo '</div></a>';
+                                echo '</div>';
+                            }
+                        ?>
+                    </div>
+                 
               </div>
-           
+           <a id="retourGalerie" style="padding-bottom: 20px" href="index.php#slide3">Retour</a>
        
     </div> 
        
