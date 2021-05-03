@@ -65,13 +65,33 @@
             })
             
 
+            
+            const navGroup = document.querySelectorAll('#Travaux ul .row li')
+            
+            navGroup.forEach(navi => {
+            navi.addEventListener('click',()=>{
+                
+                
+                const galGroup = document.querySelectorAll('.galgroup')
+                const target = document.querySelector(navi.dataset.id) 
+                galGroup.forEach(groupe => {
+                    groupe.classList.remove('galopen')
+                    
+                })
+                target.classList.toggle('galopen')
+                
+                
+            })
+        })
+        console.log(navGroup)
+
         })
     </script>
 </head>
 <body>
 
 <nav id="principal">
-            <div class="logo"><a href="index.html"><img src="images/logoMenu.png" alt=""></a></div>
+            <div class="logo"><a href="index.php"><img src="images/logoMenu.png" alt=""></a></div>
             <ul>
                     <li><a href="index.php"><div class="haut-titre">Welcome</div><div class="sous-titre">ACCUEIL</div></a></li>
                     <li><a href="#index.phpslide2"><div class="haut-titre">About me</div><div class="sous-titre">À PROPOS</div></a></li>
@@ -124,6 +144,7 @@
             <div class="fleurslide3"><img src="images/fleurVerte.png" alt=""></div>
             <nav id="TravauxResp">
                 <ul>
+                    <li data-id="#group0" class="col-md-2 "><a class="item" href="#slide3">Tous</a></li>
                     <li data-id="#group1" class="col-md-2 "><a class="item" href="#slide3">Dessin et illustration</a></li>
                     <li data-id="#group2" class="col-md-2 "><a class="item" href="#slide3">Retouches graphiques  </a></li>
                     <li data-id="#group3" class="col-md-2 "><a class="item" href="#slide3">Dessin vectoriel</a></li>
@@ -143,6 +164,7 @@
             <nav id="Travaux">
                 <ul>
                     <div class="row g-0 justify-content-evently">
+                        <li data-id="#group0" class="col-12 md-0 text-start"><a href="#slide3">Tous</a></li>
                         <li data-id="#group1" class="col-2 md-0"><a href="#slide3">Dessin et illustration</a></li>
                         <li data-id="#group2" class="col-2"><a href="#slide3">Retouches graphiques  </a></li>
                         <li data-id="#group3" class="col-2"><a href="#slide3">Dessin vectoriel</a></li>

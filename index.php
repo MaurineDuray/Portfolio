@@ -75,7 +75,7 @@
                 
                 
                 const galGroup = document.querySelectorAll('.galgroup')
-                const target = document.querySelector(navi.dataset.nom) 
+                const target = document.querySelector(navi.dataset.id) 
                 galGroup.forEach(groupe => {
                     groupe.classList.remove('galopen')
                     
@@ -152,7 +152,7 @@
                 <img src="images/illuHome.svg" alt="">
             </div>
         </div>
-        
+        <div class="fleche"><img src="images/fleche.png" alt=""></div>
     </div>
     <div class="slide" id="slide2">
         <div class="container">
@@ -179,13 +179,13 @@
                             <br>Etudes supérieures -  Bachelier en Arts Appliqués à la HEPH Condorcet de Saint-Ghislain
                             <br>Bachelier en Techniques graphiques à l’EPSE de Marcq
                         </p>
-                    <h6>Logiciels</h6>
+                    <h6>Compétences</h6>
                         <div class="trait"></div>
-                        <div class="logiciels">
+                        <div class=" logiciels ">
                             <?php
                                 $skills = $bdd -> query("SELECT * FROM skills");
                                 while($donSkills= $skills->fetch()){
-                                    echo '<div class="carre" >';
+                                    echo '<div class="carre col-1" >';
                                     echo '<img style="width:40px; height:40px;" src="upload/'.$donSkills['image'].'" alt="image de '.$donSkills['skills'].'" >';
                                     echo '</div>';
                                 }
@@ -200,9 +200,12 @@
                     <h6>Passions</h6>
                         <div class="trait"></div>
                         <p>Nature/animaux - dessin - cuisine - balades - musique </p>
-            </div>
+            <p><a href="index.php#slide3">Voir mon portfolio</a></p>
         </div>
+            
+        </div>   
     </div>
+     <div class="fleche"><img src="images/fleche.png" alt=""></div>
     </div>
 
     
@@ -217,12 +220,13 @@
             <div class="fleurslide3"><img src="images/fleurVerte.png" alt=""></div>
             <nav id="TravauxResp">
                 <ul>
-                    <li  class="col-md-2 "><a class="item" href="#slide3">Dessin et illustration</a></li>
-                    <li class="col-md-2 "><a class="item" href="#slide3">Retouches graphiques  </a></li>
-                    <li  class="col-md-2 "><a class="item" href="#slide3">Dessin vectoriel</a></li>
-                    <li  class="col-md-2 "><a class="item" href="#slide3">Mise en page PAO</a></li>
-                    <li  class="col-md-2 "><a class="item" href="#slide3">Web - WebDesign</a></li>
-                    <li  class="col-md-2 "><a class="item" href="#slide3">Animation</a></li>  
+                    <li data-id="#group0" class="col-md-2 "><a class="item" href="#slide3">Tous</a></li>
+                    <li data-id="#group1" class="col-md-2 "><a class="item" href="#slide3">Dessin et illustration</a></li>
+                    <li data-id="#group2" class="col-md-2 "><a class="item" href="#slide3">Retouches graphiques  </a></li>
+                    <li data-id="#group3" class="col-md-2 "><a class="item" href="#slide3">Dessin vectoriel</a></li>
+                    <li data-id="#group4" class="col-md-2 "><a class="item" href="#slide3">Mise en page PAO</a></li>
+                    <li data-id="#group5" class="col-md-2 "><a class="item" href="#slide3">Web - WebDesign</a></li>
+                    <li data-id="#group6" class="col-md-2 "><a class="item" href="#slide3">Animation</a></li>  
                 </ul>
             </nav>
         </div>
@@ -238,12 +242,13 @@
             <nav id="Travaux">
                 <ul>
                     <div class="row g-0 justify-content-evently">
-                        <li data-id="#group1" class="col-2 md-0"><a href="#slide3">Dessin et illustration</a></li>
-                        <li data-id="#group2" class="col-2"><a href="#slide3">Retouches graphiques  </a></li>
-                        <li data-id="#group3" class="col-2"><a href="#slide3">Dessin vectoriel</a></li>
-                        <li data-id="#group4" class="col-2"><a href="#slide3">Mise en page PAO</a></li>
-                        <li data-id="#group5" class="col-2"><a href="#slide3">Web - WebDesign</a></li>
-                        <li data-id="#group6" class="col-2"><a href="#slide3">Animation</a></li>  
+                        <li data-id="#group0" class="col-12 text-start p-5"><a href="#slide3" class="col-2 g-0 text-center">Tous les travaux</a></li>
+                        <li data-id="#group1" class="col-2 text-center"><a href="#slide3">Dessin et illustration</a></li>
+                        <li data-id="#group2" class="col-2 text-center"><a href="#slide3">Retouches graphiques  </a></li>
+                        <li data-id="#group3" class="col-2 text-center"><a href="#slide3">Dessin vectoriel</a></li>
+                        <li data-id="#group4" class="col-2 text-center"><a href="#slide3">Mise en page PAO</a></li>
+                        <li data-id="#group5" class="col-2 text-center"><a href="#slide3">Web - WebDesign</a></li>
+                        <li data-id="#group6" class="col-2 text-center"><a href="#slide3">Animation</a></li>  
                     </div>  
                 
                 </ul>
@@ -369,6 +374,7 @@
            <a href="galerie.php"><button type="button" id="ensav" class="btn btn-primary">En voir plus</button></a>
         
     </div>
+    <div class="fleche"><img src="images/fleche.png" alt=""></div>
     </div>
     
     <div class="slide" id="slide4">
