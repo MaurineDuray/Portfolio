@@ -36,16 +36,16 @@
                 echo "<div class='alert alert-danger'>Veuillez remplir le formulaire correctement (code erreur : ".$_GET['error']." )</div>";
             }
 
-            if(isset($_GET['imgerror']))
+            if(isset($_GET['fileerror']))
             {
-                echo "<div class='alert alert-danger'>Le fichier envoyé a eu problème (code erreur : ".$_GET['imgerror']." )</div>";
+                echo "<div class='alert alert-danger'>Le fichier envoyé a eu problème (code erreur : ".$_GET['fileerror']." )</div>";
             }
 
             if(isset($_GET['upload']))
             {
                 echo "<div class='alert alert-danger'>Le transfert du fichier a eu problème</div>";
             }
-
+           
         ?>
         <div class="form-group mb-3">
             <label for="title">Titre: </label>

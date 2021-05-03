@@ -12,8 +12,12 @@
     <title>Maurine Portfolio</title>
     <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css">
+    <link rel="stylesheet" href="css/sal.css" type="text/css">
     <link rel="stylesheet" href="style.css" type="text/css">
+
     <script>
+        <script src="js/sal.js"></script>
+        <script >
         window.addEventListener("load",()=>{
 
             /*menu principal */
@@ -87,10 +91,9 @@
         })
         console.log(navGroup)
         
-
-
         })
     </script>
+</script>
 </head>
 <body>
     <nav id="principal">
@@ -138,7 +141,7 @@
     </div>
     <div class="slide" id="slide1">
         
-        <div class="row g-0">
+        <div  class="row g-0">
             <div class="col-xl-6" id="gauche1">
                 <div class="group offset-0 offset-xl-1">
                     <div class="logoslide1">
@@ -456,4 +459,5 @@
         </div>
     </footer>
 </body>
+
 </html> 
