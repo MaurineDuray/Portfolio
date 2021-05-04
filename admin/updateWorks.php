@@ -154,11 +154,11 @@
             </select>
         </div>
         <div class="form-group  mb-3">
-            <label for="description">description</label>
+            <label for="description">Description</label>
             <textarea name="description" id="description" class="form-control"><?= $don['description'] ?></textarea>
         </div>
         <div class="form-group  mb-3">
-            <label for="technic">description</label>
+            <label for="technic">Techniques</label>
             <textarea name="technic" id="technic" class="form-control"><?= $don['technic'] ?></textarea>
         </div>
         <div class="col-12">

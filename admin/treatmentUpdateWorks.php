@@ -59,7 +59,7 @@
         {
             $err=4;
         }else{
-            $description= htmlspecialchars($_POST['description']);
+            $description= $_POST['description'];
         }
  
         if(empty($_POST['technic']))
@@ -75,12 +75,13 @@
             if(empty($_FILES['image']['tmp_name']))
             {
                 // gestion s'il y a PDF
-                if(!empty($_FILES['pdf']['tmp_name']))
+                if(!empty($_FILES['file']['tmp_name']))
                 {
                     $dossier = "../upload/";
-                    $pdf = basename($_FILES["pdf"]["name"]);
-                    $pdfTaille = filesize($_FILES['pdf']['tmp_name']);
-                    $pdfExtension = strrchr($_FILES['pdf']['name'],'.');
+                    $pdf = basename($_FILES["file"]["name"]);
+                    $tailleMax = 2000000;
+                    $pdfTaille = filesize($_FILES['file']['tmp_name']);
+                    $pdfExtension = strrchr($_FILES['file']['name'],'.');
                       /* tester l'extension du fichier en comparaison du tableau $extensions */
                     /* in_array permet de savoir si le 1er paramètre se retrouve dans le 2ème paramètre qui doit être un tableau */
                     if($pdfExtension!=".pdf")
@@ -88,7 +89,7 @@
                         $fileError = "pdf-wrong-extension";
                     }
     
-                    if($pdftaille > $tailleMax)
+                    if($pdfTaille > $tailleMax)
                     {
                         $fileError = "pdf-size";
                     }
@@ -103,16 +104,16 @@
     
                         $pdfcpt = rand().$pdf;
 
-                        if(move_uploaded_file($_FILES['pdf']['tmp_name'], $dossier.$pdfcpt))
+                        if(move_uploaded_file($_FILES['file']['tmp_name'], $dossier.$pdfcpt))
                         {
 
                             // test s'il y avait un pdf avant 
-                            if(!empty($don['pdf']))
+                            if(!empty($don['file']))
                             {
-                                unlink("../upload/".$don['pdf']);
+                                unlink("../upload/".$don['file']);
                             }
                             // modification avec pdf
-                            $upload = $bdd->prepare("UPDATE works SET title=:title, date=:date, category=:category,description=:description, technic=:technic, pdf=:pdf WHERE id=:myid");
+                            $upload = $bdd->prepare("UPDATE works SET title=:title, date=:date, category=:category,description=:description, technic=:technic, file=:pdf WHERE id=:myid");
                             $upload->execute([
                                 ":title" => $title,
                                 ":date" => $date,
@@ -157,7 +158,7 @@
                    // traitement de l'image
                     $dossier = "../upload/";
                     $fichier = basename($_FILES["image"]["name"]);
-                    $tailleMax = 200000;
+                    $tailleMax = 2000000;
                     $taille = filesize($_FILES['image']['tmp_name']);
                     $extensions = ['.png', '.jpg', '.jpeg', '.gif', '.svg'];
                     $extension = strrchr($_FILES['image']['name'],'.');
@@ -175,11 +176,11 @@
                     }
 
                       // gestion du PDF 
-                        if(!empty($_FILES['pdf']['tmp_name']))
+                        if(!empty($_FILES['file']['tmp_name']))
                         {
-                            $pdf = basename($_FILES["pdf"]["name"]);
-                            $pdfTaille = filesize($_FILES['pdf']['tmp_name']);
-                            $pdfExtension = strrchr($_FILES['pdf']['name'],'.');
+                            $pdf = basename($_FILES["file"]["name"]);
+                            $pdfTaille = filesize($_FILES['file']['tmp_name']);
+                            $pdfExtension = strrchr($_FILES['file']['name'],'.');
 
                             /* tester l'extension du fichier en comparaison du tableau $extensions */
                             /* in_array permet de savoir si le 1er paramètre se retrouve dans le 2ème paramètre qui doit être un tableau */
@@ -209,7 +210,7 @@
                         $fichiercpt = rand().$fichier;
 
                         // gestion pdf
-                        if(!empty($_FILES['pdf']['tmp_name']))
+                        if(!empty($_FILES['file']['tmp_name']))
                         {
                             $pdf = strtr($pdf, 
                             'ÀÁÂÃÄÅÇÈÉÊËÌÍÎÏÒÓÔÕÖÙÚÛÜÝàáâãäåçèéêëìíîïðòóôõöùúûüýÿ', 
@@ -228,7 +229,7 @@
                             // aller chercher l'ancienne image et la mettre à la poubelle
                                 unlink("../upload/".$don['image']);
                             // gestion pdf
-                            if(empty($_FILES['pdf']['tmp_name']))
+                            if(empty($_FILES['file']['tmp_name']))
                             {
 
                                 // faire un update des info
@@ -247,14 +248,14 @@
                                     header("LOCATION:works.php?update=success&id=".$id);
                             }else{
 
-                                if(move_uploaded_file($_FILES['pdf']['tmp_name'], $dossier.$pdfcpt))
+                                if(move_uploaded_file($_FILES['file']['tmp_name'], $dossier.$pdfcpt))
                                 {
                                      // test s'il y avait un pdf avant 
-                                    if(!empty($don['pdf']))
+                                    if(!empty($don['file']))
                                     {
-                                        unlink("../upload/".$don['pdf']);
+                                        unlink("../upload/".$don['file']);
                                     }
-                                    $upload = $bdd->prepare("UPDATE works SET title=:title, date=:date, category=:category, image=:image, description=:description, technic=:technic, pdf=:pdf WHERE id=:myid");
+                                    $upload = $bdd->prepare("UPDATE works SET title=:title, date=:date, category=:category, image=:image, description=:description, technic=:technic, file=:pdf WHERE id=:myid");
                                     $upload->execute([
                                         ":title" => $title,
                                         "date"=>$date,

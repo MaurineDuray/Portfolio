@@ -15,8 +15,7 @@
     <link rel="stylesheet" href="css/sal.css" type="text/css">
     <link rel="stylesheet" href="style.css" type="text/css">
 
-    <script>
-        <script src="js/sal.js"></script>
+   
         <script >
         window.addEventListener("load",()=>{
 
@@ -73,27 +72,67 @@
             
 
             const navGroup = document.querySelectorAll('#Travaux ul .row li')
+            const title = document.querySelector("#titre span")
             
             navGroup.forEach(navi => {
             navi.addEventListener('click',()=>{
+                const target = document.querySelector(navi.dataset.id)
                 
-                
-                const galGroup = document.querySelectorAll('.galgroup')
-                const target = document.querySelector(navi.dataset.id) 
-                galGroup.forEach(groupe => {
-                    groupe.classList.remove('galopen')
-                    
+                const galGroup = document.querySelectorAll(".galgroup")
+                galGroup.forEach(group => {
+                    group.classList.remove('galopen')
                 })
                 target.classList.toggle('galopen')
-                
-                
             })
         })
-        console.log(navGroup)
+
+            
+            const mobilLink = document.querySelectorAll('.mobil-link')
+            
+            
+            mobilLink.forEach(link=>{
+                link.addEventListener('click',()=>{
+                    menuTrvx.classList.remove("menuOpen")
+                    let galGroup = document.querySelectorAll('.galgroup')
+                    let target = document.querySelector(link.dataset.id)
+                    galGroup.forEach(groupe => {
+                        groupe.classList.remove('galopen')
+                       
+                    })
+                    target.classList.toggle('galopen')
+                    })
+            })
         
+        
+        /*menu change de couleur*/
+        /*
+       const home = document.querySelector('#slide1')
+        const pres = document.querySelector('#slide2')
+        const gal = document.querySelector('#slide3')
+        const cont = document.querySelector('#slide4')
+        const nav = document.querySelector('nav #principal')
+
+        var scrolling
+
+        window.addEventListener('scroll',()=>{
+            scrolling = document.documentElement.scrollTop || window.scrollY || window.pageYOffset || document.body.scrollTop
+
+            if((scrolling > pres.offsetTop)&&(scrolling < gal.offset)){
+                nav.style.backgroundColor="white"
+            }else (scrolling > cont.offsetTop){
+                nav.style.backgroundColor="white"
+
+            }
+            
+
+        })
+
+        */
+
+           
         })
     </script>
-</script>
+
 </head>
 <body>
     <nav id="principal">
@@ -223,13 +262,13 @@
             <div class="fleurslide3"><img src="images/fleurVerte.png" alt=""></div>
             <nav id="TravauxResp">
                 <ul>
-                    <li data-id="#group0" class="col-md-2 "><a class="item" href="#slide3">Tous</a></li>
-                    <li data-id="#group1" class="col-md-2 "><a class="item" href="#slide3">Dessin et illustration</a></li>
-                    <li data-id="#group2" class="col-md-2 "><a class="item" href="#slide3">Retouches graphiques  </a></li>
-                    <li data-id="#group3" class="col-md-2 "><a class="item" href="#slide3">Dessin vectoriel</a></li>
-                    <li data-id="#group4" class="col-md-2 "><a class="item" href="#slide3">Mise en page PAO</a></li>
-                    <li data-id="#group5" class="col-md-2 "><a class="item" href="#slide3">Web - WebDesign</a></li>
-                    <li data-id="#group6" class="col-md-2 "><a class="item" href="#slide3">Animation</a></li>  
+                    <li data-id="#group0" class="col-12 text-center mobil-link" data-title="Travaux récents">Travaux récents</li>
+                    <li data-id="#group1" class="col-12 mobil-link" data-title="Dessin et illustration">Dessin et illustration</li>
+                    <li data-id="#group2" class="col-12 mobil-link" data-title="Retouches graphiques">Retouches graphiques</li>
+                    <li data-id="#group3" class="col-12 mobil-link" data-title="Dessin vectoriel">Dessin vectoriel</li>
+                    <li data-id="#group4" class="col-12 mobil-link" data-title="Mise en page PAO">Mise en page PAO</li>
+                    <li data-id="#group5" class="col-12 mobil-link" data-title="Web - WebDesign">Web - WebDesign</li>
+                    <li data-id="#group6" class="col-12 mobil-link" data-title="Animation">Animation</li>  
                 </ul>
             </nav>
         </div>
@@ -245,7 +284,8 @@
             <nav id="Travaux">
                 <ul>
                     <div class="row g-0 justify-content-evently">
-                        <li data-id="#group0" class="col-12 text-start p-5"><a href="#slide3" class="col-2 g-0 text-center">Tous les travaux</a></li>
+                        <li data-id="#group0" class="col-12 text-start p-5"><a href="#slide3" class="col-2 g-0 text-center" >Travaux récents
+                    </a></li>
                         <li data-id="#group1" class="col-2 text-center"><a href="#slide3">Dessin et illustration</a></li>
                         <li data-id="#group2" class="col-2 text-center"><a href="#slide3">Retouches graphiques  </a></li>
                         <li data-id="#group3" class="col-2 text-center"><a href="#slide3">Dessin vectoriel</a></li>
@@ -276,9 +316,12 @@
                     <p>Trier</p>
             </div>
         </div>
-        
+
+        <div id="titre" class="col-12 text-center" style="color:rgb(0, 161, 153);font-size : 12pt;">Catégorie choisie: <span>Travaux récents
+        </span></div>
+
         <div id="portfolio" class="container overflow-hidden gal-container" >
-                <div class="row g-3 galgroup galopen" id="group0">
+                <div class="row g-3 galgroup galopen" id="group0" >
                     <?php
                         $works = $bdd -> query("SELECT * FROM works  ORDER BY date DESC LIMIT 6");
                         while($donWorks = $works ->fetch()){
@@ -294,8 +337,10 @@
 
                 <div class="row g-3 galgroup" id="group1">
                     <?php
+
                         $works = $bdd -> query ("SELECT * FROM works WHERE category = 'dessinIllu' ORDER BY date DESC LIMIT 6");
                         while($donWorks = $works ->fetch()){
+                            
                             echo '<div class="col-md-4" >';
                                 echo '<a href="project.php?id='.$donWorks["id"].'">';
                                 echo '<div class="cadre" style="display: flex; justify-content: center; background-image: url(upload/'.$donWorks["image"].'); background-position: center center; background-size: contain; background-repeat:no-repeat; background-color: rgb(240, 240, 240, 05)">';
@@ -450,7 +495,7 @@
             <div class="navFoot col-md-6">
                 <ul>
                     <li><a href="#slide1">Accueil</a></li>
-                    <li><a href="#slide2">A propos</a></li>
+                    <li><a href="#slide2">À propos</a></li>
                     <li><a href="#slide3">Portfolio</a></li>
                     <li><a href="#slide4">Contact</a></li>
                 </ul>

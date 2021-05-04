@@ -33,7 +33,7 @@
          unlink("../upload/".$don['image']);
          if(!empty($don['pdf']))
          {
-             unlink("../upload/".$don['pdf']);
+             unlink("../upload/".$don['file']);
          }
          $delete = $bdd->prepare("DELETE FROM works WHERE id=?");
          $delete->execute([$id]);
@@ -91,14 +91,16 @@
      <span class="value-artwork"><?= nl2br($don['technic']) ?></span>
     </div>
     <?php
-        if(!empty($don['pdf']))
+        if(!empty($don['file']))
         {
             echo ' <span class="label-artwork">Document: </span>';
-            echo "<a href='../upload/".$don['pdf']."'>Document</a>";
+            echo "<a href='../upload/".$don['file']."'>Cliquez pour ouvrir le document</a>";
         }
     ?>
 
-    <h2>Voulez-vous supprimer <?= $don['title'] ?></h2>
+    
+
+    <h2>Voulez-vous supprimer "<?= $don['title'] ?>" ?</h2>
     <a href="works.php" class="btn btn-success mx-2">Non</a>
     <a href="deleteWorks.php?id=<?= $don['id'] ?>&del=ok" class="btn btn-danger mx-2">Oui</a>
     

@@ -35,7 +35,7 @@
         {
             $err=4;
         }else{
-            $description = htmlspecialchars($_POST['description']);
+            $description = $_POST['description'];
         }
         if(empty($_POST['technic']))
         {
@@ -48,7 +48,7 @@
             // traitement de l'image
             $dossier = "../upload/";
             $fichier = basename($_FILES["image"]["name"]);
-            $tailleMax = 200000;
+            $tailleMax = 2000000;
             $taille = filesize($_FILES['image']['tmp_name']);
             $extensions = ['.png', '.jpg', '.jpeg', '.gif', '.svg'];
             $extension = strrchr($_FILES['image']['name'],'.');
@@ -76,7 +76,7 @@
                 {
                     $fileError = "pdf-wrong-extension";
                 }
-                if($pdftaille > $tailleMax)
+                if($pdfTaille > $tailleMax)
                 {
                     $fileError = "pdf-size";
                 }
@@ -133,7 +133,7 @@
                         {
                               // le fichier est dans le dossier
                             // insertion dans la base de données
-                            $insert = $bdd->prepare("INSERT INTO works (title,date,category,description,technic,image,pdf) VALUES(:title,:date,:category,:description,:technic,:image,:pdf)");
+                            $insert = $bdd->prepare("INSERT INTO works (title,date,category,description,technic,image,file) VALUES(:title,:date,:category,:description,:technic,:image,:pdf)");
                             $insert->execute([
                                 ":title" => $title,
                                 ":date" => $date,

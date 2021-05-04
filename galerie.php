@@ -67,24 +67,36 @@
 
             
             const navGroup = document.querySelectorAll('#Travaux ul .row li')
+            const title = document.querySelector("#titre span")
             
             navGroup.forEach(navi => {
             navi.addEventListener('click',()=>{
+                const target = document.querySelector(navi.dataset.id)
                 
-                
-                const galGroup = document.querySelectorAll('.galgroup')
-                const target = document.querySelector(navi.dataset.id) 
-                galGroup.forEach(groupe => {
-                    groupe.classList.remove('galopen')
-                    
+                const galGroup = document.querySelectorAll(".galgroup")
+                galGroup.forEach(group => {
+                    group.classList.remove('galopen')
                 })
                 target.classList.toggle('galopen')
-                
-                
             })
         })
-        console.log(navGroup)
 
+            
+            const mobilLink = document.querySelectorAll('.mobil-link')
+            
+            
+            mobilLink.forEach(link=>{
+                link.addEventListener('click',()=>{
+                    menuTrvx.classList.remove("menuOpen")
+                    let galGroup = document.querySelectorAll('.galgroup')
+                    let target = document.querySelector(link.dataset.id)
+                    galGroup.forEach(groupe => {
+                        groupe.classList.remove('galopen')
+                       
+                    })
+                    target.classList.toggle('galopen')
+                    })
+            })
         })
     </script>
 </head>
@@ -290,7 +302,7 @@
                     </div>
                  
               </div>
-           <a id="retourGalerie" style="padding-bottom: 20px" href="index.php#slide3">Retour</a>
+           <a id="retourGalerie" style="padding-bottom: 20px" href="index.php#slide3">En voir moins</a>
        
     </div> 
        

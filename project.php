@@ -117,8 +117,16 @@
         <div><b>Techniques: </b><?= $don['technic'] ?></div>
         <div><b>Description: </b><?= nl2br($don['description']) ?></div>
         <div class="wrapper"><a href="upload/<?= $don['image'] ?>" ><img style="width:70%; margin-0;"id="imageWork" src="upload/<?= $don['image'] ?>" alt="image de <?= $don['title'] ?>"></a></div>
-
         <p id="click">Cliquez sur la photo pour l'agrandir</p>
+        
+        <?php
+        if(!empty($don['file']))
+        {
+            echo ' <span class="label-artwork">Document: </span>';
+            echo "<a href='upload/".$don['file']."'>Cliquez pour ouvrir le document</a>";
+        }
+    ?><br>
+        
 
         <div class="btn btn-danger col-4" style="margin-top: 40px;"><a style= "text-decoration:none; color:white;" href="index.php#slide3">Retour </a></div>
 
