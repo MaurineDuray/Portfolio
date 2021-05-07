@@ -109,29 +109,42 @@
         </nav>
     </div>
 
-    <div class="slide" id="projectPage">
-    <div class="container" id="work" style="text-align: left;">
-        
-        <div>Titre: <h1><?= $don['title'] ?></h1></div>
-        <div><b>Date: </b><?= $don['date'] ?></div>
-        <div><b>Techniques: </b><?= $don['technic'] ?></div>
-        <div><b>Description: </b><?= nl2br($don['description']) ?></div>
-        <div class="wrapper"><a href="upload/<?= $don['image'] ?>" ><img style="width:70%; margin-0;"id="imageWork" src="upload/<?= $don['image'] ?>" alt="image de <?= $don['title'] ?>"></a></div>
-        <p id="click">Cliquez sur la photo pour l'agrandir</p>
-        
-        <?php
-        if(!empty($don['file']))
-        {
-            echo ' <span class="label-artwork">Document: </span>';
-            echo "<a href='upload/".$don['file']."'>Cliquez pour ouvrir le document</a>";
-        }
-    ?><br>
-        
-
-        <div class="btn btn-danger col-4" style="margin-top: 40px;"><a style= "text-decoration:none; color:white;" href="index.php#slide3">Retour </a></div>
-
+    <div class="demipage">
         
     </div>
-</div>
+
+    <div class="slide " id="projectPage">
+        <div class="row">
+            <div class="projetGauche container col-7">
+                <a href="upload/<?= $don['image'] ?>" ><img class=" col-12"style="width:80%; margin-0;"id="imageWork" src="upload/<?= $don['image'] ?>" alt="image de <?= $don['title'] ?>"></a><br>
+                <p>Cliquez sur la photo pour l'agrandir</p>
+            </div>
+            <div class="projetDroite container col-5" id="work" style="text-align: left;">
+                
+                    <div>Titre: <h3><?= $don['title'] ?></h3></div>
+                    <div class="ligne"></div>
+                    <div><b>Date: </b><br><p><?= $don['date'] ?></p></div>
+                    <div class="ligne"></div>
+                    <div><b>Techniques: </b><br><p><?= $don['technic'] ?></p></div>
+                    <div class="ligne"></div>
+                    <div><b>Description: </b><br><p><?= nl2br($don['description']) ?></p></div>
+                    
+            
+                    
+                    <?php
+                    if(!empty($don['file']))
+                    {
+                        echo ' <span class="label-artwork">Document: </span>';
+                        echo "<a href='upload/".$don['file']."'>Cliquez pour ouvrir le document</a>";
+                    }
+                ?><br>
+                    
+                    
+                    
+
+                </div>
+                <div id="retour" class="btn btn-dark col-2 offset-9" style="margin-top: 40px;"><a style= "text-decoration:none; color:white;" href="index.php#slide3">Retour </a></div>
+        </div>
+    </div>
 </body>
 </html>

@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Bellota+Text:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap');
+@import '~sal.js/sal.css';
 *{
     margin: 0;
     padding: 0; 
@@ -127,14 +128,15 @@ body{
 
 }
 .menuBurger .barre{
-    background-color: white;
+    background-color: rgb(9, 9, 9);
     height: 5px; 
     width: 40px;
     margin: 4px;
-    border-radius: 20px;
+    border-radius: 30px;
 }
 nav #principal{
     position: fixed;
+    transition: all 3s;
 }
 #principal{
     width: 100%;
@@ -163,7 +165,7 @@ nav #principal{
     display: grid;
     grid-template-columns: repeat(4, 1fr);;
     text-decoration: none;
-    color: white;
+    color: black;
     list-style: none;
 
 
@@ -174,7 +176,9 @@ nav #principal{
     text-align: center;
     transform: translateY(25%);
 }
-
+.color{
+    color:black;
+}
 #principal ul li a:hover{
     color: black;
 }
@@ -185,7 +189,7 @@ nav #principal{
 #principal ul li a{
     text-decoration: none;
     list-style: none;
-    color:white;
+    color:black;
 }
 
 .haut-titre{
@@ -447,9 +451,10 @@ nav #principal{
     background-repeat: no-repeat;
     background-position: bottom center ;
     padding-top: 120px;
-    padding-bottom: -200px;
+    
     min-height: 100vh;
     box-sizing: border-box;
+    
 
 }
 
@@ -464,7 +469,7 @@ nav #principal{
     
 }
 .gal-container{
-    min-height: 65vh;
+    min-height: 55vh;
     width: 100%;
     position: relative;
     background-color: transparent;
@@ -473,10 +478,10 @@ nav #principal{
 }
 .galgroup{
     width: 100%;
-    height: 100%;
+    height: 90%;
     position: absolute;
     top: 0px;
-    left: 100%;
+    left: 150%;
     padding: 15px;
     transition: all 0s;
 }
@@ -558,16 +563,17 @@ nav #principal{
     margin: 3px;
     border-radius: 2px;
 }
-.portfolio{
-    width: 80%;
+#portfolio{
+    width: 90%;
     margin-left: 50%;
     transform: translateX(-50%);
-    height: 1000px;
+    
+    overflow-x: hidden;
 }
 
 .cadre{
     background-color:transparent;
-    height: 30vh;
+    height: 25vh;
     padding: 20px;
 }
 
@@ -772,19 +778,22 @@ footer .container{
     position: absolute;
 
 }
+#portfolioGal{
+    width: 90%;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    overflow-x: hidden;
+    
+}
 
 /*********Project*********/
 
 #projectPage{
     position: absolute;
     margin-top: 130px;
+    width:100%;
 }
-.wrapper{
-    width: 100%;
-}
-.wrapper img{
-    width: 90%;
-}
+
 .container #work{
     font-size: 20pt;
     
@@ -795,8 +804,44 @@ footer .container{
 
 #click{
     font-size: 12pt;
+    text-align: center;
 }
 
+.projetGauche{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.projetGauche img{
+    margin-left: 50%;
+    transform:translateX(-50%);
+    max-width: 500px;
+}
+.projetGauche p{
+    width: 100%;
+    position: absolute;
+    bottom: -50px;
+    text-align: center;
+    font-size: 12pt;
+}
+.projetDroite b, p{
+    font-size: 15pt;
+}
+.ligne{
+    width: 120%;
+    margin-right: 0;
+    height: 2px;
+    background-color: rgb(255, 149, 0);
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.demipage{
+    background-color: rgb(255, 149, 0);
+    height: 100%;
+    width: 30%;
+}
 
 
 /***********************************Media queries************************/
@@ -884,7 +929,7 @@ footer .container{
     }
 
 }   
-@media all and (max-width: 768px){
+@media all and (max-width: 767px){
     #principal ul{
         display: none;
     }
@@ -915,6 +960,9 @@ footer .container{
     .menuTravx ul li{
         width: 100%;
     }
+    #portfolio{
+        min-height: 170vh;
+    }
     .fleur img{
         width: auto;
         height: 400px;
@@ -936,6 +984,11 @@ footer .container{
         text-align: 30px;
     }
     
+}
+@media all and (max-width:450px){
+    .contact{
+        background-image: none;
+    }
 }
 
 @media all and (max-width: 400px){

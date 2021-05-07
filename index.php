@@ -15,7 +15,16 @@
     <link rel="stylesheet" href="css/sal.css" type="text/css">
     <link rel="stylesheet" href="style.css" type="text/css">
 
-   
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    
+    <script src="js/sal.js"></script>
+
+
         <script >
         window.addEventListener("load",()=>{
 
@@ -105,29 +114,40 @@
         
         
         /*menu change de couleur*/
-        /*
+        
        const home = document.querySelector('#slide1')
         const pres = document.querySelector('#slide2')
         const gal = document.querySelector('#slide3')
         const cont = document.querySelector('#slide4')
-        const nav = document.querySelector('nav #principal')
-
+        const nav = document.querySelector('#principal')
+        const li = document.querySelectorAll("#principal ul li a")
         var scrolling
-
+console.log(li)
         window.addEventListener('scroll',()=>{
             scrolling = document.documentElement.scrollTop || window.scrollY || window.pageYOffset || document.body.scrollTop
 
-            if((scrolling > pres.offsetTop)&&(scrolling < gal.offset)){
+            if(scrolling < pres.offsetTop - 100){
+                nav.style.backgroundColor="rgba(0, 161, 154, 1)"
+            
+            }else if((scrolling > pres.offsetTop - 100)&(scrolling < gal.offsetTop - 100)){
                 nav.style.backgroundColor="white"
-            }else (scrolling > cont.offsetTop){
+                
+            }else if((scrolling > gal.offsetTop - 100)&(scrolling <cont.offsetTop - 100)){
+                nav.style.backgroundColor="rgba(0, 161, 154, 1)"
+                
+            }else if(scrolling > cont.offsetTop - 100){
                 nav.style.backgroundColor="white"
-
+                
             }
             
+            
+            
+
+
 
         })
 
-        */
+        
 
            
         })
@@ -135,6 +155,8 @@
 
 </head>
 <body>
+
+
     <nav id="principal">
             <div class="logo"><a href="index.php"><img src="images/logoMenu.png" alt=""></a></div>
             <ul>
@@ -183,11 +205,11 @@
         <div  class="row g-0">
             <div class="col-xl-6" id="gauche1">
                 <div class="group offset-0 offset-xl-1">
-                    <div class="logoslide1">
+                    <div  data-sal-easing="ease-out-back" data-sal-duration ="400" data-sal="slide-right" data-sal-delay="300"class="logoslide1">
                         <img src="images/logo.png" alt="">
                     </div>
-                    <h1>DURAY MAURINE</h1>
-                    <h3>Graphiste - Infographiste</h3>
+                    <h1 >DURAY MAURINE</h1>
+                    <h3 data-sal-duration ="400" data-sal="slide-left" data-sal-delay="300" >Graphiste - Infographiste</h3>
                 </div>
             </div>
             <div class="col-xl-6" id="droite1">
@@ -214,15 +236,15 @@
             </div>
             <div class="col-xl-6 droite2">
                     <h2>À PROPOS</h2>
-                    <h4>about me</h4>
+                    <h4 data-sal-duration ="500" data-sal="slide-left" data-sal-delay="500">About me</h4>
                     <h6>Parcours</h6>
-                        <div class="trait"></div>
+                        <div data-sal-duration ="500" data-sal="slide-left" data-sal-delay="500"class="trait"></div>
                         <p>Etudes secondaires - Athénée Royale d’Enghien option langues
                             <br>Etudes supérieures -  Bachelier en Arts Appliqués à la HEPH Condorcet de Saint-Ghislain
                             <br>Bachelier en Techniques graphiques à l’EPSE de Marcq
                         </p>
                     <h6>Compétences</h6>
-                        <div class="trait"></div>
+                        <div data-sal-duration ="500" data-sal="slide-left" data-sal-delay="500"class="trait"></div>
                         <div class=" logiciels ">
                             <?php
                                 $skills = $bdd -> query("SELECT * FROM skills");
@@ -237,10 +259,10 @@
                             
                         </div>
                     <h6>Personnalité</h6>
-                        <div class="trait"></div>
+                        <div data-sal-duration ="500" data-sal="slide-left" data-sal-delay="500"class="trait"></div>
                         <p>Joviale - Travailleuse - Rapide - Apprend vite - Souriante - Autonome</p>
                     <h6>Passions</h6>
-                        <div class="trait"></div>
+                        <div data-sal-duration ="500" data-sal="slide-left" data-sal-delay="500"class="trait"></div>
                         <p>Nature/animaux - dessin - cuisine - balades - musique </p>
             <p><a href="index.php#slide3">Voir mon portfolio</a></p>
         </div>
@@ -279,7 +301,7 @@
         <div class="fleurslide3"><img src="images/fleurVerte.png" alt=""></div>
         <div class="container galerie">
         <h2>PORTFOLIO</h2>
-        <h4>See my work</h4>
+        <h4 data-sal-duration ="500" data-sal="slide-right" data-sal-delay="500">See my work</h4>
         <div class="menuTravx">
             <nav id="Travaux">
                 <ul>
@@ -317,7 +339,7 @@
             </div>
         </div>
 
-        <div id="titre" class="col-12 text-center" style="color:rgb(0, 161, 153);font-size : 12pt;">Catégorie choisie: <span>Travaux récents
+        <div id="titre" class="col-12 text-center" style="color:black;font-size : 12pt; background-color: rgba(255, 255, 255, 0.722);">Catégorie choisie: <span>Travaux récents
         </span></div>
 
         <div id="portfolio" class="container overflow-hidden gal-container" >
@@ -439,7 +461,7 @@
             </div>
             <div class="droite4 col-lg-6">
                 <h2>CONTACT</h2>
-                <h4>Get in touch</h4>
+                <h4 data-sal-duration ="500" data-sal="slide-left" data-sal-delay="500">Get in touch</h4>
                
                <div class="trou">
                    <form method="POST" action="admin/treatmentAddMessage.php">
@@ -503,6 +525,18 @@
             <div class="copy col-md-6">Copyright @ Duray Maurine</div>
         </div>
     </footer>
+
+
+
+
+
+    <script>
+        sal({
+           
+            once: false,
+        });
+    </script>
+
 </body>
 
 </html> 
