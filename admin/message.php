@@ -74,8 +74,10 @@
                             echo "<td class='text-center'>".$don['id']."</td>";
                             echo "<td class='text-center'>".$don['name']."</td>";
                             echo "<td class='text-center'>".$don['email']."</td>";
-                            echo "<td class='text-center'>".$don['message']."</td>";
+                            echo "<td class='text-center'>".$don['subject']."</td>";
                             echo "<td class='text-center'>";
+                            
+                                echo "<a href='openmessage.php?id=".$don['id']."' class='btn btn-success mx-2'>Ouvrir</a>";
                                 echo "<a href='https://outlook.live.com/owa/' class='btn btn-warning mx-2'>Répondre</a>";
                                 echo "<a href='deleteMessage.php?id=".$don['id']."' class='btn btn-danger mx-2'>Supprimer</a>";
                             echo "</td>";

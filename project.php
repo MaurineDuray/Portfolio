@@ -122,11 +122,11 @@
             <div class="projetDroite container col-5" id="work" style="text-align: left;">
                 
                     <div>Titre: <h3><?= $don['title'] ?></h3></div>
-                    <div class="ligne"></div>
+                    <div class="line"></div>
                     <div><b>Date: </b><br><p><?= $don['date'] ?></p></div>
-                    <div class="ligne"></div>
+                    <div class="line"></div>
                     <div><b>Techniques: </b><br><p><?= $don['technic'] ?></p></div>
-                    <div class="ligne"></div>
+                    <div class="line"></div>
                     <div><b>Description: </b><br><p><?= nl2br($don['description']) ?></p></div>
                     
             

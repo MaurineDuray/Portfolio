@@ -140,11 +140,6 @@ console.log(li)
                 
             }
             
-            
-            
-
-
-
         })
 
         
@@ -238,13 +233,13 @@ console.log(li)
                     <h2>À PROPOS</h2>
                     <h4 data-sal-duration ="500" data-sal="slide-left" data-sal-delay="500">About me</h4>
                     <h6>Parcours</h6>
-                        <div data-sal-duration ="500" data-sal="slide-left" data-sal-delay="500"class="trait"></div>
+                        <div data-sal-duration ="500" data-sal="slide-left" data-sal-delay="500"class="filet"></div>
                         <p>Etudes secondaires - Athénée Royale d’Enghien option langues
                             <br>Etudes supérieures -  Bachelier en Arts Appliqués à la HEPH Condorcet de Saint-Ghislain
                             <br>Bachelier en Techniques graphiques à l’EPSE de Marcq
                         </p>
                     <h6>Compétences</h6>
-                        <div data-sal-duration ="500" data-sal="slide-left" data-sal-delay="500"class="trait"></div>
+                        <div data-sal-duration ="500" data-sal="slide-left" data-sal-delay="500"class="filet"></div>
                         <div class=" logiciels ">
                             <?php
                                 $skills = $bdd -> query("SELECT * FROM skills");
@@ -259,10 +254,10 @@ console.log(li)
                             
                         </div>
                     <h6>Personnalité</h6>
-                        <div data-sal-duration ="500" data-sal="slide-left" data-sal-delay="500"class="trait"></div>
+                        <div data-sal-duration ="500" data-sal="slide-left" data-sal-delay="500"class="filet"></div>
                         <p>Joviale - Travailleuse - Rapide - Apprend vite - Souriante - Autonome</p>
                     <h6>Passions</h6>
-                        <div data-sal-duration ="500" data-sal="slide-left" data-sal-delay="500"class="trait"></div>
+                        <div data-sal-duration ="500" data-sal="slide-left" data-sal-delay="500"class="filet"></div>
                         <p>Nature/animaux - dessin - cuisine - balades - musique </p>
             <p><a href="index.php#slide3">Voir mon portfolio</a></p>
         </div>

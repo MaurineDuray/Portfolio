@@ -308,7 +308,7 @@ nav #principal{
 .droite2{
     padding-bottom: 50px;
 }
-.trait{
+.filet{
     height: 3px;
     width: 100%;
     background-color: white;
@@ -829,7 +829,7 @@ footer .container{
 .projetDroite b, p{
     font-size: 15pt;
 }
-.ligne{
+.line{
     width: 120%;
     margin-right: 0;
     height: 2px;
