@@ -212,6 +212,9 @@ nav #principal{
     padding-top: 100px;
     min-height: 100vh;
 }
+.logoslide1{
+    margin-left: 6px;
+}
 
 #slide1 h1{
     font-size: 5vw;
@@ -219,11 +222,14 @@ nav #principal{
     font-weight: 800;
     padding-left: 0;
     margin-left: 0px;
+    display: flex;
+    flex-wrap: wrap;
 }
 #slide1 h3{
     color: rgb(255, 149, 0);
     font-size: 1em;
     font-family: 'Bellota Text', cursive;
+    margin-left: 5px;
 }
 #gauche1{
     display: flex;
@@ -478,7 +484,7 @@ nav #principal{
 }
 .galgroup{
     width: 100%;
-    height: 90%;
+    min-height: 90%;
     position: absolute;
     top: 0px;
     left: 150%;
@@ -574,7 +580,7 @@ nav #principal{
 .cadre{
     background-color:transparent;
     height: 25vh;
-    padding: 20px;
+    padding: 30px;margin:10px 0px 10px 0px;
 }
 
 #ensav{
@@ -785,6 +791,82 @@ footer .container{
     overflow-x: hidden;
     
 }
+#slideGalery{
+   padding-top: 200px;
+   min-height: 100vh;
+   padding-bottom: 200px;
+}
+#slideGalery h2{
+    font-size: 6vw;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 800;
+    padding-left: 0;
+    margin-left: 0px;
+    color:rgba(9, 82, 79, 0.26);
+}
+#slideGalery h4{
+    font-size: 1em;
+    font-family: 'Bellota Text', cursive;
+    text-align: start;
+}
+.galerie{
+    width:100%; 
+    min-height: 100vh;
+    margin: 0px;
+    padding-bottom: 250px;
+    position: relative;
+    z-index: 30;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    
+}
+.class-container{
+    
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+    background-color: transparent;
+    padding-top:250px;
+    padding-bottom: 100px;
+    margin-bottom: 50px;
+   
+}
+.classgroup{
+    width: 100%;
+    min-height: 100vh;
+    position: absolute;
+    top: 5px;
+    left: 150%;
+    padding: 15px;
+    transition: all 0s;
+    margin-bottom: 50px;
+}
+
+.classopen{
+    left: 0 ;
+    /*z-index: 4 !important;*/
+    margin-bottom: 50px;
+}
+
+#back{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left:-5px;
+    color:rgb(255, 149, 0);
+    text-decoration: none;
+    background-color:rgba(16, 68, 87, 1);
+    border-radius: 5px;
+    padding: 15px 15px 15px 25px;
+    box-sizing: border-box;
+    position: fixed;
+    bottom: 2%;
+    z-index: 80;
+}
+
+footer #footerGalerie{
+position: relative; 
+bottom: 0;
+}
 
 /*********Project*********/
 
@@ -825,6 +907,9 @@ footer .container{
     bottom: -50px;
     text-align: center;
     font-size: 12pt;
+}
+.projetDroite{
+    padding-top:100px;
 }
 .projetDroite b, p{
     font-size: 15pt;

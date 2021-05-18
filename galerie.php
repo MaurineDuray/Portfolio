@@ -73,11 +73,11 @@
             navi.addEventListener('click',()=>{
                 const target = document.querySelector(navi.dataset.id)
                 
-                const galGroup = document.querySelectorAll(".galgroup")
+                const galGroup = document.querySelectorAll(".classgroup")
                 galGroup.forEach(group => {
-                    group.classList.remove('galopen')
+                    group.classList.remove('classopen')
                 })
-                target.classList.toggle('galopen')
+                target.classList.toggle('classopen')
             })
         })
 
@@ -88,13 +88,13 @@
             mobilLink.forEach(link=>{
                 link.addEventListener('click',()=>{
                     menuTrvx.classList.remove("menuOpen")
-                    let galGroup = document.querySelectorAll('.galgroup')
+                    let galGroup = document.querySelectorAll('.classgroup')
                     let target = document.querySelector(link.dataset.id)
                     galGroup.forEach(groupe => {
-                        groupe.classList.remove('galopen')
+                        groupe.classList.remove('classopen')
                        
                     })
-                    target.classList.toggle('galopen')
+                    target.classList.toggle('classopen')
                     })
             })
         })
@@ -106,10 +106,10 @@
             <div class="logo"><a href="index.php"><img src="images/logoMenu.png" alt=""></a></div>
             <ul>
                     <li><a href="index.php"><div class="haut-titre">Welcome</div><div class="sous-titre">ACCUEIL</div></a></li>
-                    <li><a href="#index.phpslide2"><div class="haut-titre">About me</div><div class="sous-titre">À PROPOS</div></a></li>
+                    <li><a href="index.php#slide2"><div class="haut-titre">About me</div><div class="sous-titre">À PROPOS</div></a></li>
                     
-                    <li><a href="#index.phpslide3"><div class="haut-titre">See my work</div><div class="sous-titre">PORTFOLIO</div></a></li>
-                    <li><a href="#index.phpslide4"><div class="haut-titre">Get in touch</div><div class="sous-titre">CONTACT</div></a></li>
+                    <li><a href="index.php#slide3"><div class="haut-titre">See my work</div><div class="sous-titre">PORTFOLIO</div></a></li>
+                    <li><a href="index.php#slide4"><div class="haut-titre">Get in touch</div><div class="sous-titre">CONTACT</div></a></li>
                 
             </ul>
             <div class="menuBurger">
@@ -146,23 +146,23 @@
         </nav>
     </div>
 
-    <div class="slide" id="slide3">
+    <div class="slide" id="slideGalery">
         <!--Menu responsive travaux -->
         <div class="menuTrvxResp">
             <div class="fermer">
                 <div class="barre" id="barre1"></div>
                 <div class="barre" id="barre2"></div>
             </div>
-            <div class="fleurslide3"><img src="images/fleurVerte.png" alt=""></div>
+           
             <nav id="TravauxResp">
                 <ul>
-                    <li data-id="#group0" class="col-12 text-center mobil-link" data-title="Travaux récents">Travaux récents</li>
-                    <li data-id="#group1" class="col-12 mobil-link" data-title="Dessin et illustration">Dessin et illustration</li>
-                    <li data-id="#group2" class="col-12 mobil-link" data-title="Retouches graphiques">Retouches graphiques</li>
-                    <li data-id="#group3" class="col-12 mobil-link" data-title="Dessin vectoriel">Dessin vectoriel</li>
-                    <li data-id="#group4" class="col-12 mobil-link" data-title="Mise en page PAO">Mise en page PAO</li>
-                    <li data-id="#group5" class="col-12 mobil-link" data-title="Web - WebDesign">Web - WebDesign</li>
-                    <li data-id="#group6" class="col-12 mobil-link" data-title="Animation">Animation</li>  
+                    <li data-id="#class0" class="col-12 text-center mobil-link" data-title="Travaux récents">Tous les travaux</li>
+                    <li data-id="#class1" class="col-12 mobil-link" data-title="Dessin et illustration">Dessin et illustration</li>
+                    <li data-id="#class2" class="col-12 mobil-link" data-title="Retouches graphiques">Retouches graphiques</li>
+                    <li data-id="#class3" class="col-12 mobil-link" data-title="Dessin vectoriel">Dessin vectoriel</li>
+                    <li data-id="#class4" class="col-12 mobil-link" data-title="Mise en page PAO">Mise en page PAO</li>
+                    <li data-id="#class5" class="col-12 mobil-link" data-title="Web - WebDesign">Web - WebDesign</li>
+                    <li data-id="#class6" class="col-12 mobil-link" data-title="Animation">Animation</li>  
                 </ul>
             </nav>
         </div>
@@ -178,14 +178,15 @@
             <nav id="Travaux">
                 <ul>
                     <div class="row g-0 justify-content-evently">
-                        <li data-id="#group0" class="col-12 text-start p-5"><a href="#slide3" class="col-2 g-0 text-center" >Travaux récents
-                    </a></li>
-                        <li data-id="#group1" class="col-2 text-center"><a href="#slide3">Dessin et illustration</a></li>
-                        <li data-id="#group2" class="col-2 text-center"><a href="#slide3">Retouches graphiques  </a></li>
-                        <li data-id="#group3" class="col-2 text-center"><a href="#slide3">Dessin vectoriel</a></li>
-                        <li data-id="#group4" class="col-2 text-center"><a href="#slide3">Mise en page PAO</a></li>
-                        <li data-id="#group5" class="col-2 text-center"><a href="#slide3">Web - WebDesign</a></li>
-                        <li data-id="#group6" class="col-2 text-center"><a href="#slide3">Animation</a></li>  
+                        <li data-id="#class0" class="col-12 text-start p-5"><a href="#slide3" class="col-2 g-0 text-center" >Tous les travaux
+</a></li>
+                        <li data-id="#class1" class="col-2 text-center"><a href="#slide3">Dessin et illustration</a></li>
+                        <li data-id="#class2" class="col-2 text-center"><a href="#slide3">Retouches graphiques  </a></li>
+                        <li data-id="#class3" class="col-2 text-center"><a href="#slide3">Dessin vectoriel</a></li>
+                        <li data-id="#class4" class="col-2 text-center"><a href="#slide3">Mise en page PAO</a></li>
+                        <li data-id="#class5" class="col-2 text-center"><a href="#slide3">Web - WebDesign</a></li>
+                        <li data-id="#class6" class="col-2 text-center"><a href="#slide3">Animation</a></li> 
+                       
                     </div>  
                 
                 </ul>
@@ -214,8 +215,8 @@
         <div id="titre" class="col-12 text-center" style="color:black;font-size : 12pt; background-color: rgba(255, 255, 255, 0.722);">Catégorie choisie: <span>Travaux récents
         </span></div>
 
-        <div id="portfolioGal" class="container overflow-hidden gal-container" >
-                <div class="row g-3 galgroup galopen" id="group0" >
+        <div  class="container  class-container" >
+                <div class="row g-3 classgroup classopen" id="class0" >
                     <?php
                         $works = $bdd -> query("SELECT * FROM works  ORDER BY date ");
                         while($donWorks = $works ->fetch()){
@@ -229,7 +230,7 @@
                     ?>
                 </div>
 
-                <div class="row g-3 galgroup" id="group1">
+                <div class="row g-3 classgroup" id="class1">
                     <?php
 
                         $works = $bdd -> query ("SELECT * FROM works WHERE category = 'dessinIllu' ORDER BY date ");
@@ -245,7 +246,7 @@
                     ?>
                 </div>
 
-                <div class="row g-3 galgroup" id="group2">
+                <div class="row g-3 classgroup" id="class2">
                     <?php
                         $works = $bdd -> query("SELECT * FROM works WHERE category = 'retoucheGraph' ORDER BY date ");
                         while($donWorks = $works ->fetch()){
@@ -258,7 +259,7 @@
                         }
                     ?>
                 </div>
-                <div class="row g-3 galgroup" id="group3">
+                <div class="row g-3 classgroup" id="class3">
                     <?php
                         $works = $bdd -> query("SELECT * FROM works WHERE category = 'dessinVectoriel' ORDER BY date ");
                         while($donWorks = $works ->fetch()){
@@ -271,7 +272,7 @@
                         }
                     ?>
                 </div>
-                <div class="row g-3 galgroup" id="group4">
+                <div class="row g-3 classgroup" id="class4">
                     <?php
                         $works = $bdd -> query("SELECT * FROM works WHERE category = 'pao' ORDER BY date ");
                         while($donWorks = $works ->fetch()){
@@ -284,7 +285,7 @@
                         }
                     ?>
                 </div>
-                <div class="row g-3 galgroup" id="group5">
+                <div class="row g-3 classgroup" id="class5">
                     <?php
                         $works = $bdd -> query("SELECT * FROM works WHERE category = 'web' ORDER BY date ");
                         while($donWorks = $works ->fetch()){
@@ -313,10 +314,45 @@
 
                 
               </div>
-           <a href="index.php#slide3"><button type="button" id="ensav" class="btn btn-primary">Retour </button></a>
+           
         
     </div>
-    
+    <a id ="back" href="index.php#slide3"> Retour </a>
     </div>
+    
+    <footer id="footerGalerie">
+        <div class="container">
+        <div class="row">
+            <div class="log col-md-3">
+                <img src="images/logo.png" alt="">
+            </div>
+            <div class="reseau col-md-3">
+                <p>Réseaux sociaux</p>
+                <a href="https://www.facebook.com/MaurineDsign"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com/?hl=fr"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/maurine-duray-086603207/"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <div class="legislation col-md-6">
+               
+                <p>Les images non libres de droits utilisées dans ce portfolio ont été utilisées dans le cadre scolaire et non à but commercial. </p>
+            </div>
+        </div>
+        </div>
+    
+    
+    <div class="copyrigth">
+        <div class="row g-0">
+            <div class="navFoot col-md-6">
+                <ul>
+                    <li><a href="index.php#slide1">Accueil</a></li>
+                    <li><a href="index.php#slide2">À propos</a></li>
+                    <li><a href="index.php#slide3">Portfolio</a></li>
+                    <li><a href="index.php#slide4">Contact</a></li>
+                </ul>
+            </div>
+            <div class="copy col-md-6">Copyright @ Duray Maurine</div>
+        </div>
+    </footer>
+
 </body>
 </html>

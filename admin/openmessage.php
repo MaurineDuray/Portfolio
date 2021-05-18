@@ -74,10 +74,6 @@
      <span class="label-message">Message: </span>
      <span class="value-message"><?= $don['message'] ?></span>
     </div>
-    
-
-    
-    
 
    
     <a href="message.php" class="btn btn-success mx-2">Retour</a>

@@ -115,12 +115,12 @@
 
     <div class="slide " id="projectPage">
         <div class="row">
-            <div class="projetGauche container col-7">
+            <div class="projetGauche container col-md-7">
                 <a href="upload/<?= $don['image'] ?>" ><img class=" col-12"style="width:80%; margin-0;"id="imageWork" src="upload/<?= $don['image'] ?>" alt="image de <?= $don['title'] ?>"></a><br>
                 <p>Cliquez sur la photo pour l'agrandir</p>
             </div>
-            <div class="projetDroite container col-5" id="work" style="text-align: left;">
-                
+            <div class="projetDroite container col-md-5" id="work" style="text-align: left;">
+                <div class="container-fluid">
                     <div>Titre: <h3><?= $don['title'] ?></h3></div>
                     <div class="line"></div>
                     <div><b>Date: </b><br><p><?= $don['date'] ?></p></div>
@@ -129,7 +129,7 @@
                     <div class="line"></div>
                     <div><b>Description: </b><br><p><?= nl2br($don['description']) ?></p></div>
                     
-            
+            </div>
                     
                     <?php
                     if(!empty($don['file']))
@@ -143,7 +143,7 @@
                     
 
                 </div>
-                <div id="retour" class="btn btn-dark col-2 offset-9" style="margin-top: 40px;"><a style= "text-decoration:none; color:white;" href="index.php#slide3">Retour </a></div>
+                <a style= "text-decoration:none; color:white;" href="index.php#slide3"><div id="retour" class="btn btn-dark col-2 offset-9" style="margin-top: 40px;">Retour</div> </a>
         </div>
     </div>
 </body>

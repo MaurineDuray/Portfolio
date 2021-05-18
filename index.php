@@ -203,7 +203,7 @@ console.log(li)
                     <div  data-sal-easing="ease-out-back" data-sal-duration ="400" data-sal="slide-right" data-sal-delay="300"class="logoslide1">
                         <img src="images/logo.png" alt="">
                     </div>
-                    <h1 >DURAY MAURINE</h1>
+                    <h1>MAURINE DURAY</h1>
                     <h3 data-sal-duration ="400" data-sal="slide-left" data-sal-delay="300" >Graphiste - Infographiste</h3>
                 </div>
             </div>
