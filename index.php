@@ -10,6 +10,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <title>Maurine Portfolio</title>
+    <link rel="icon" type="image/png" href="images/logo.png" />
+    <meta name="title" content="Duray Maurine - Portfolio">
+    <meta property="og:title" content="Maurine Duray - Portfolio">
+    <meta property="og:url" content="http://maurine.duray.info/">
+    <meta property="og:description" content="Maurine Duray, graphiste-infographiste vous présente son portfolio.">
+    <meta property="og:site_name" content="Duray Maurine">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:image" content="http://maurine.duray.info/images/logoMenu.png">
+<meta property="og:image:width" content="500">
+<meta property="og:image:height" content="500">
     <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css">
     <link rel="stylesheet" href="css/sal.css" type="text/css">
@@ -74,10 +85,10 @@
             items.forEach(item => {
                 item.addEventListener('click',()=>{
                     menuTrvx.classList.remove("menuOpen")
+                    items.classList.toggle('hoverOrange')
                 })
             })
-            
-            
+          
             
 
             const navGroup = document.querySelectorAll('#Travaux ul .row li')
@@ -166,6 +177,7 @@ console.log(li)
                 <div class="barre"></div>
                 <div class="barre"></div>
                 <div class="barre"></div>
+                <p>Menu</p>
             </div>
         
     </nav>
@@ -175,6 +187,7 @@ console.log(li)
             <div class="croix">
                 <div class="barre" id="barre1"></div>
                 <div class="barre" id="barre2"></div>
+                <p>Fermer</p>
             </div>
         </div>
 
@@ -219,27 +232,27 @@ console.log(li)
             <div class="col-xl-6 gauche2">
                 <div class="row ">
                         <div class="col-4 fleur"><img src="images/fleur.png" alt=""></div>
-                        <div class="donnees">
-                            <h5 class="duray">DURAY</h5>
-                            <h5> MAURINE</h5>
-                            <p>0479088681</p>
-                            <p>Rue de Ghislenghien, 33</p>
-                            <p>7822 Ghislenghien</p>
-                            <p>maurine.duray@skynet.be</p>
+                        <div  class="donnees">
+                            <h5 class="duray" data-sal="flip-left" data-sal-delay="300" data-sal-easing="ease-out-back">DURAY</h5>
+                            <h5 data-sal="zoom-in" data-sal-delay="300" data-sal-easing="ease-out-back"> MAURINE</h5>
+                            <p data-sal="zoom-in" data-sal-delay="400" data-sal-easing="ease-out-back">0479088681</p>
+                            <p data-sal="zoom-in" data-sal-delay="400" data-sal-easing="ease-out-back">Rue de Ghislenghien, 33</p>
+                            <p data-sal="zoom-in" data-sal-delay="400" data-sal-easing="ease-out-back">7822 Ghislenghien</p>
+                            <p data-sal="zoom-in" data-sal-delay="400" data-sal-easing="ease-out-back">maurine.duray@skynet.be</p>
                         </div>
                 </div>
             </div>
             <div class="col-xl-6 droite2">
                     <h2>À PROPOS</h2>
-                    <h4 data-sal-duration ="500" data-sal="slide-left" data-sal-delay="500">About me</h4>
+                    <h4 data-sal-duration ="1000" data-sal="slide-left" data-sal-delay="800">About me</h4>
                     <h6>Parcours</h6>
-                        <div data-sal-duration ="500" data-sal="slide-left" data-sal-delay="500"class="filet"></div>
+                        <div data-sal-duration ="500" data-sal="slide-left" data-sal-delay="850"class="filet"></div>
                         <p>Etudes secondaires - Athénée Royale d’Enghien option langues
                             <br>Etudes supérieures -  Bachelier en Arts Appliqués à la HEPH Condorcet de Saint-Ghislain
                             <br>Bachelier en Techniques graphiques à l’EPSE de Marcq
                         </p>
                     <h6>Compétences</h6>
-                        <div data-sal-duration ="500" data-sal="slide-left" data-sal-delay="500"class="filet"></div>
+                        <div data-sal-duration ="1000" data-sal="slide-left" data-sal-delay="900"class="filet"></div>
                         <div class=" logiciels ">
                             <?php
                                 $skills = $bdd -> query("SELECT * FROM skills");
@@ -250,14 +263,12 @@ console.log(li)
                                 }
                             ?>
                             
-                            
-                            
                         </div>
                     <h6>Personnalité</h6>
-                        <div data-sal-duration ="500" data-sal="slide-left" data-sal-delay="500"class="filet"></div>
+                        <div data-sal-duration ="1000" data-sal="slide-left" data-sal-delay="950"class="filet"></div>
                         <p>Joviale - Travailleuse - Rapide - Apprend vite - Souriante - Autonome</p>
                     <h6>Passions</h6>
-                        <div data-sal-duration ="500" data-sal="slide-left" data-sal-delay="500"class="filet"></div>
+                        <div data-sal-duration ="1000" data-sal="slide-left" data-sal-delay="1000"class="filet"></div>
                         <p>Nature/animaux - dessin - cuisine - balades - musique </p>
             <p><a href="index.php#slide3">Voir mon portfolio</a></p>
         </div>

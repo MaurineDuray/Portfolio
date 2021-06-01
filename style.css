@@ -88,27 +88,28 @@ body{
 
 .logoResp{
     position: absolute;
-    margin-top: 15px;
+    margin-top: 10px;
     margin-left: 20px;
-    width: 50px;
+    width: 40px;
 }
 .logoResp img{
-    width: 50px;
+    width: 48px;
 }
 .croix{
     position: absolute; 
-    padding: 20px;
-    right: 10px;
-    margin-top: 30px;
+    top: 10px;
+    right: 18px;
+   
+    margin-top: 20px;
     cursor: pointer;
 }
 .croix .barre{
-    background-color: white;
+    background-color: black;
     height: 5px; 
     width: 40px;
     border-radius: 20px;
     margin: 5px;
-
+    transition: all 3s;
 }
 .croix #barre1{
     transform: rotate(45deg);
@@ -116,6 +117,12 @@ body{
 .croix #barre2{
     transform: rotate(-45deg);
     margin-top: -10px;
+}
+.croix p{
+    font-size: 10pt;
+    text-align: center;
+    line-height: 30px;
+    color: black;
 }
 
 .menuBurger{
@@ -133,6 +140,11 @@ body{
     width: 40px;
     margin: 4px;
     border-radius: 30px;
+}
+.menuBurger p{
+    font-size: 10pt;
+    text-align: center;
+    line-height: 13px;
 }
 nav #principal{
     position: fixed;
@@ -306,6 +318,8 @@ nav #principal{
     margin-right: 20px;
     text-align: right;
     padding-right: 30px;
+    font-size: 27pt;
+    
 }
 .gauche2{
     position: relative;
@@ -549,6 +563,9 @@ nav #principal{
 #Travaux ul li a:hover{
     color:rgb(255, 149, 0);
 }
+.hoverOrange{
+    color:rgb(255, 149, 0);
+}
 
 .menutrier{
     width: 42px;
@@ -584,15 +601,17 @@ nav #principal{
 }
 
 #ensav{
-    width: 100%;
+    width: 20%;
     text-align: center;
-    background-color: transparent;
+    background-color:rgb(255, 149, 0) ;
     border: none;
-    color:rgb(255, 149, 0);
+    color:white;
     font-family: 'Bellota Text', cursive;
     font-size: 14pt;
-    text-decoration: underline;
+    text-decoration: none;
     font-weight: bold;
+    margin-top: 30px;
+    margin-left: 6%;
     
 }
 
@@ -671,7 +690,7 @@ nav #principal{
     border-radius: 40px;
     width: 110%;
     height: auto;
-    box-shadow: 0px 28px 24px 0px rgba(0, 0, 0, 0.25) inset;
+    box-shadow: 0px 10px 24px 0px rgba(0, 0, 0, 0.25) inset, 0px 10px 24px 0px rgba(0, 0, 0, 0.25) inset;
     text-align: left;
     padding: 50px 0px 20px 50px;
     margin-bottom: 150px;
@@ -852,15 +871,18 @@ footer .container{
     margin-top: 15px;
     margin-bottom: 15px;
     margin-left:-5px;
-    color:rgb(255, 149, 0);
+    color:white;
     text-decoration: none;
-    background-color:rgba(16, 68, 87, 1);
+    background-color:rgb(255, 149, 0);
     border-radius: 5px;
-    padding: 15px 15px 15px 25px;
+    padding: 5px 5px 15px 25px;
     box-sizing: border-box;
     position: fixed;
-    bottom: 2%;
+    bottom: 10%;
     z-index: 80;
+    height: 35px;
+    font-size: 15pt;
+
 }
 
 footer #footerGalerie{
@@ -1046,7 +1068,12 @@ bottom: 0;
         width: 100%;
     }
     #portfolio{
-        min-height: 170vh;
+        min-height: 180vh;
+    }
+    #ensav{
+        width: 50%;
+        height: 40px;
+        margin-left: 30px;
     }
     .fleur img{
         width: auto;
@@ -1128,6 +1155,9 @@ bottom: 0;
     }
     .illu{
         margin-top: -200px;
+    }
+    .trou{
+        width: 100%;
     }
     .contact{
         width: 200px;

@@ -178,14 +178,14 @@
             <nav id="Travaux">
                 <ul>
                     <div class="row g-0 justify-content-evently">
-                        <li data-id="#class0" class="col-12 text-start p-5"><a href="#slide3" class="col-2 g-0 text-center" >Tous les travaux
+                        <li data-id="#class0" class="col-12 text-start p-5"><a href="galerie.php#slide3?cat=tout" class="col-2 g-0 text-center" >Tous les travaux
 </a></li>
-                        <li data-id="#class1" class="col-2 text-center"><a href="#slide3">Dessin et illustration</a></li>
-                        <li data-id="#class2" class="col-2 text-center"><a href="#slide3">Retouches graphiques  </a></li>
-                        <li data-id="#class3" class="col-2 text-center"><a href="#slide3">Dessin vectoriel</a></li>
-                        <li data-id="#class4" class="col-2 text-center"><a href="#slide3">Mise en page PAO</a></li>
-                        <li data-id="#class5" class="col-2 text-center"><a href="#slide3">Web - WebDesign</a></li>
-                        <li data-id="#class6" class="col-2 text-center"><a href="#slide3">Animation</a></li> 
+                        <li data-id="#class1" class="col-2 text-center"><a href="#galerie.php#slide3?cat=tout">Dessin et illustration</a></li>
+                        <li data-id="#class2" class="col-2 text-center"><a href="#galerie.php#slide3?cat=retouche">Retouches graphiques  </a></li>
+                        <li data-id="#class3" class="col-2 text-center"><a href="#galerie.php#slide3?cat=dessin">Dessin vectoriel</a></li>
+                        <li data-id="#class4" class="col-2 text-center"><a href="#galerie.php#slide3?cat=pao">Mise en page PAO</a></li>
+                        <li data-id="#class5" class="col-2 text-center"><a href="#galerie.php#slide3?cat=web">Web - WebDesign</a></li>
+                        <li data-id="#class6" class="col-2 text-center"><a href="#galerie.php#slide3?cat=anim">Animation</a></li> 
                        
                     </div>  
                 
@@ -218,7 +218,9 @@
         <div  class="container  class-container" >
                 <div class="row g-3 classgroup classopen" id="class0" >
                     <?php
-                        $works = $bdd -> query("SELECT * FROM works  ORDER BY date ");
+                        if(isset($_GET['tout']))
+                        {
+                             $works = $bdd -> query("SELECT * FROM works  ORDER BY date ");
                         while($donWorks = $works ->fetch()){
                             echo '<div class="col-md-4" >';
                                 echo '<a href="project.php?id='.$donWorks["id"].'">';
@@ -227,12 +229,14 @@
                                 echo '</div></a>';
                             echo '</div>';
                         }
+                        }
+                        
                     ?>
                 </div>
 
                 <div class="row g-3 classgroup" id="class1">
                     <?php
-
+                        
                         $works = $bdd -> query ("SELECT * FROM works WHERE category = 'dessinIllu' ORDER BY date ");
                         while($donWorks = $works ->fetch()){
                             
