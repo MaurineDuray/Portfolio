@@ -447,7 +447,7 @@ console.log(li)
 
                 
               </div>
-           <a href="galerie.php"><button type="button" id="ensav" class="btn btn-primary">En voir plus</button></a>
+           <a href="galerie.php"><button type="button" id="ensav" class="btn btn-primary col-1">En voir plus</button></a>
         
     </div>
     <div class="fleche"><img src="images/fleche.png" alt=""></div>

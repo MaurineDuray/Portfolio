@@ -503,7 +503,7 @@ nav #principal{
     top: 0px;
     left: 150%;
     padding: 15px;
-    transition: all 0s;
+    transition: all 1.5s;
 }
 
 .galopen{
@@ -590,8 +590,8 @@ nav #principal{
     width: 90%;
     margin-left: 50%;
     transform: translateX(-50%);
+    min-height: 60vh;
     
-    overflow-x: hidden;
 }
 
 .cadre{
@@ -1068,7 +1068,7 @@ bottom: 0;
         width: 100%;
     }
     #portfolio{
-        min-height: 180vh;
+        min-height: 175vh;
     }
     #ensav{
         width: 50%;
@@ -1101,10 +1101,13 @@ bottom: 0;
     .contact{
         background-image: none;
     }
+    
 }
 
 @media all and (max-width: 400px){
-
+    #portfolio{
+        min-height: 200vh;
+    }
     .fleur img{
         width: auto;
         height: 400px;

@@ -218,9 +218,7 @@
         <div  class="container  class-container" >
                 <div class="row g-3 classgroup classopen" id="class0" >
                     <?php
-                        if(isset($_GET['tout']))
-                        {
-                             $works = $bdd -> query("SELECT * FROM works  ORDER BY date ");
+                        $works = $bdd -> query("SELECT * FROM works  ORDER BY date ");
                         while($donWorks = $works ->fetch()){
                             echo '<div class="col-md-4" >';
                                 echo '<a href="project.php?id='.$donWorks["id"].'">';
@@ -229,14 +227,12 @@
                                 echo '</div></a>';
                             echo '</div>';
                         }
-                        }
-                        
                     ?>
                 </div>
 
                 <div class="row g-3 classgroup" id="class1">
                     <?php
-                        
+                    
                         $works = $bdd -> query ("SELECT * FROM works WHERE category = 'dessinIllu' ORDER BY date ");
                         while($donWorks = $works ->fetch()){
                             
