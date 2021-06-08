@@ -1,5 +1,9 @@
 <?php
     require "connexion.php";
+
+    if(isset($_GET['category'])){
+        $category = htmlspecialchars($_GET['category']);
+    }
 ?>
 
 <!DOCTYPE html>
@@ -66,20 +70,7 @@
             
 
             
-            const navGroup = document.querySelectorAll('#Travaux ul .row li')
-            const title = document.querySelector("#titre span")
             
-            navGroup.forEach(navi => {
-            navi.addEventListener('click',()=>{
-                const target = document.querySelector(navi.dataset.id)
-                
-                const galGroup = document.querySelectorAll(".classgroup")
-                galGroup.forEach(group => {
-                    group.classList.remove('classopen')
-                })
-                target.classList.toggle('classopen')
-            })
-        })
 
             
             const mobilLink = document.querySelectorAll('.mobil-link')
@@ -178,14 +169,14 @@
             <nav id="Travaux">
                 <ul>
                     <div class="row g-0 justify-content-evently">
-                        <li data-id="#class0" class="col-12 text-start p-5"><a href="galerie.php#slide3?cat=tout" class="col-2 g-0 text-center" >Tous les travaux
+                        <li data-id="#class0" class="col-12 text-start p-5"><a href="galerie.php?category=tout" class="col-2 g-0 text-center" >Tous les travaux
 </a></li>
-                        <li data-id="#class1" class="col-2 text-center"><a href="#galerie.php#slide3?cat=tout">Dessin et illustration</a></li>
-                        <li data-id="#class2" class="col-2 text-center"><a href="#galerie.php#slide3?cat=retouche">Retouches graphiques  </a></li>
-                        <li data-id="#class3" class="col-2 text-center"><a href="#galerie.php#slide3?cat=dessin">Dessin vectoriel</a></li>
-                        <li data-id="#class4" class="col-2 text-center"><a href="#galerie.php#slide3?cat=pao">Mise en page PAO</a></li>
-                        <li data-id="#class5" class="col-2 text-center"><a href="#galerie.php#slide3?cat=web">Web - WebDesign</a></li>
-                        <li data-id="#class6" class="col-2 text-center"><a href="#galerie.php#slide3?cat=anim">Animation</a></li> 
+                        <li data-id="#class1" class="col-2 text-center"><a href="galerie.php?category=dessinIllu">Dessin et illustration</a></li>
+                        <li data-id="#class2" class="col-2 text-center"><a href="galerie.php?category=retoucheGraph">Retouches graphiques  </a></li>
+                        <li data-id="#class3" class="col-2 text-center"><a href="galerie.php?category=dessinVectoriel">Dessin vectoriel</a></li>
+                        <li data-id="#class4" class="col-2 text-center"><a href="galerie.php?category=pao">Mise en page PAO</a></li>
+                        <li data-id="#class5" class="col-2 text-center"><a href="galerie.php?category=web">Web - WebDesign</a></li>
+                        <li data-id="#class6" class="col-2 text-center"><a href="galerie.php#?category=animation">Animation</a></li> 
                        
                     </div>  
                 
@@ -215,105 +206,35 @@
         <div id="titre" class="col-12 text-center" style="color:black;font-size : 12pt; background-color: rgba(255, 255, 255, 0.722);">Catégorie choisie: <span>Travaux récents
         </span></div>
 
-        <div  class="container  class-container" >
+        <div  class="container  class-container photo " >
                 <div class="row g-3 classgroup classopen" id="class0" >
                     <?php
-                        $works = $bdd -> query("SELECT * FROM works  ORDER BY date ");
-                        while($donWorks = $works ->fetch()){
-                            echo '<div class="col-md-4" >';
-                                echo '<a href="project.php?id='.$donWorks["id"].'">';
-                                echo '<div class="cadre" style="display: flex; justify-content: center; background-image: url(upload/'.$donWorks["image"].'); background-position: center center; background-size: contain; background-repeat:no-repeat; background-color: rgb(240, 240, 240, 05)">';
-                                   
-                                echo '</div></a>';
-                            echo '</div>';
-                        }
-                    ?>
-                </div>
+                            if(isset($_GET['category'])){
+                                $category = htmlspecialchars($_GET['category']);
+                            }
+                            $works = $bdd -> prepare("SELECT * FROM works WHERE category=? ORDER BY date");
 
-                <div class="row g-3 classgroup" id="class1">
-                    <?php
-                    
-                        $works = $bdd -> query ("SELECT * FROM works WHERE category = 'dessinIllu' ORDER BY date ");
-                        while($donWorks = $works ->fetch()){
+                            $works->execute([$category]);
+                             if($donworks = $works->fetch())
+                            {
+                            while($donWorks = $works ->fetch()){
+                                echo '<div class="col-md-4" >';
+                                    echo '<a href="project.php?id='.$donWorks["id"].'">';
+                                    echo '<div class="cadre" style="display: flex; justify-content: center; background-image: url(upload/'.$donWorks["image"].'); background-position: center center; background-size: contain; background-repeat:no-repeat; background-color: rgb(240, 240, 240, 05)">';
+                                       
+                                    echo '</div></a>';
+                                echo '</div>';
+                                 
+                            }
+                            }$works->closeCursor();
+                        
+                                
                             
-                            echo '<div class="col-md-4" >';
-                                echo '<a href="project.php?id='.$donWorks["id"].'">';
-                                echo '<div class="cadre" style="display: flex; justify-content: center; background-image: url(upload/'.$donWorks["image"].'); background-position: center center; background-size: contain; background-repeat:no-repeat; background-color: rgb(240, 240, 240, 05)">';
-                                   
-                                echo '</div></a>';
-                            echo '</div>';
-                        }
+                            
                     ?>
                 </div>
-
-                <div class="row g-3 classgroup" id="class2">
-                    <?php
-                        $works = $bdd -> query("SELECT * FROM works WHERE category = 'retoucheGraph' ORDER BY date ");
-                        while($donWorks = $works ->fetch()){
-                            echo '<div class="col-md-4" >';
-                                echo '<a href="project.php?id='.$donWorks["id"].'">';
-                                echo '<div class="cadre" style="display: flex; justify-content: center; background-image: url(upload/'.$donWorks["image"].'); background-position: center center; background-size: contain; background-repeat:no-repeat; background-color: rgb(240, 240, 240, 05)">';
-                                   
-                                echo '</div></a>';
-                            echo '</div>';
-                        }
-                    ?>
-                </div>
-                <div class="row g-3 classgroup" id="class3">
-                    <?php
-                        $works = $bdd -> query("SELECT * FROM works WHERE category = 'dessinVectoriel' ORDER BY date ");
-                        while($donWorks = $works ->fetch()){
-                            echo '<div class="col-md-4" >';
-                                echo '<a href="project.php?id='.$donWorks["id"].'">';
-                                echo '<div class="cadre" style="display: flex; justify-content: center; background-image: url(upload/'.$donWorks["image"].'); background-position: center center; background-size: contain; background-repeat:no-repeat; background-color: rgb(240, 240, 240, 05)">';
-                                   
-                                echo '</div></a>';
-                            echo '</div>';
-                        }
-                    ?>
-                </div>
-                <div class="row g-3 classgroup" id="class4">
-                    <?php
-                        $works = $bdd -> query("SELECT * FROM works WHERE category = 'pao' ORDER BY date ");
-                        while($donWorks = $works ->fetch()){
-                            echo '<div class="col-md-4" >';
-                                echo '<a href="project.php?id='.$donWorks["id"].'">';
-                                echo '<div class="cadre" style="display: flex; justify-content: center; background-image: url(upload/'.$donWorks["image"].'); background-position: center center; background-size: contain; background-repeat:no-repeat; background-color: rgb(240, 240, 240, 05)">';
-                                   
-                                echo '</div></a>';
-                            echo '</div>';
-                        }
-                    ?>
-                </div>
-                <div class="row g-3 classgroup" id="class5">
-                    <?php
-                        $works = $bdd -> query("SELECT * FROM works WHERE category = 'web' ORDER BY date ");
-                        while($donWorks = $works ->fetch()){
-                            echo '<div class="col-md-4" >';
-                                echo '<a href="project.php?id='.$donWorks["id"].'">';
-                                echo '<div class="cadre" style="display: flex; justify-content: center; background-image: url(upload/'.$donWorks["image"].'); background-position: center center; background-size: contain; background-repeat:no-repeat; background-color: rgb(240, 240, 240, 05)">';
-                                   
-                                echo '</div></a>';
-                            echo '</div>';
-                        }
-                    ?>
-                </div>
-                <div class="row g-3 galgroup" id="group6">
-                    <?php
-                        $works = $bdd -> query("SELECT * FROM works WHERE category = 'animation' ORDER BY date ");
-                        while($donWorks = $works ->fetch()){
-                            echo '<div class="col-md-4" >';
-                                echo '<a href="project.php?id='.$donWorks["id"].'">';
-                                echo '<div class="cadre" style="display: flex; justify-content: center; background-image: url(upload/'.$donWorks["image"].'); background-position: center center; background-size: contain; background-repeat:no-repeat; background-color: rgb(240, 240, 240, 05)">';
-                                   
-                                echo '</div></a>';
-                            echo '</div>';
-                        }
-                    ?>
-                </div>
-
-                
-              </div>
+       
+        </div>
            
         
     </div>

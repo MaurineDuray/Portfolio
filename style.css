@@ -812,7 +812,7 @@ footer .container{
 }
 #slideGalery{
    padding-top: 200px;
-   min-height: 100vh;
+  
    padding-bottom: 200px;
 }
 #slideGalery h2{
@@ -839,6 +839,9 @@ footer .container{
     transform: translateX(-50%);
     
 }
+.photo{
+    height: 30vh;
+}
 .class-container{
     
     width: 100%;
@@ -852,7 +855,7 @@ footer .container{
 }
 .classgroup{
     width: 100%;
-    min-height: 100vh;
+    min-height: 30vh;
     position: absolute;
     top: 5px;
     left: 150%;
@@ -1070,6 +1073,7 @@ bottom: 0;
     #portfolio{
         min-height: 175vh;
     }
+    
     #ensav{
         width: 50%;
         height: 40px;
