@@ -89,9 +89,10 @@
                 })
             })
           
-            
+           
 
             const navGroup = document.querySelectorAll('#Travaux ul .row li')
+            
             const title = document.querySelector("#titre span")
             
             navGroup.forEach(navi => {
@@ -101,15 +102,20 @@
                 const galGroup = document.querySelectorAll(".galgroup")
                 galGroup.forEach(group => {
                     group.classList.remove('galopen')
+                    
                 })
                 target.classList.toggle('galopen')
+                
+
+                })
             })
-        })
 
             
+
+
+        
             const mobilLink = document.querySelectorAll('.mobil-link')
-            
-            
+        
             mobilLink.forEach(link=>{
                 link.addEventListener('click',()=>{
                     menuTrvx.classList.remove("menuOpen")
@@ -120,7 +126,7 @@
                        
                     })
                     target.classList.toggle('galopen')
-                    })
+                })
             })
         
         

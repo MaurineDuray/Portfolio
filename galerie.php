@@ -13,6 +13,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Duray Maurine Portfolio</title>
+    <link rel="icon" type="image/png" href="images/logo.png" />
     <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css">
     <link rel="stylesheet" href="style.css" type="text/css">
@@ -147,13 +148,13 @@
            
             <nav id="TravauxResp">
                 <ul>
-                    <li data-id="#class0" class="col-12 text-center mobil-link" data-title="Travaux récents">Tous les travaux</li>
-                    <li data-id="#class1" class="col-12 mobil-link" data-title="Dessin et illustration">Dessin et illustration</li>
-                    <li data-id="#class2" class="col-12 mobil-link" data-title="Retouches graphiques">Retouches graphiques</li>
-                    <li data-id="#class3" class="col-12 mobil-link" data-title="Dessin vectoriel">Dessin vectoriel</li>
-                    <li data-id="#class4" class="col-12 mobil-link" data-title="Mise en page PAO">Mise en page PAO</li>
-                    <li data-id="#class5" class="col-12 mobil-link" data-title="Web - WebDesign">Web - WebDesign</li>
-                    <li data-id="#class6" class="col-12 mobil-link" data-title="Animation">Animation</li>  
+                    <li data-id="#class0" class="col-12 text-center mobil-link" data-title="Travaux récents"><a href="galerie.php?category=tout">Tous les travaux</a></li>
+                    <li data-id="#class1" class="col-12 mobil-link" data-title="Dessin et illustration"><a href="galerie.php?category=dessinIllu">Dessin et illustration</a></li>
+                    <li data-id="#class2" class="col-12 mobil-link" data-title="Retouches graphiques"><a href="galerie.php?category=retoucheGraph">Retouches graphiques</a></li>
+                    <li data-id="#class3" class="col-12 mobil-link" data-title="Dessin vectoriel"><a href="galerie.php?category=dessinVectoriel">Dessin vectoriel</a></li>
+                    <li data-id="#class4" class="col-12 mobil-link" data-title="Mise en page PAO"><a href="galerie.php?category=pao">Mise en page PAO</a></li>
+                    <li data-id="#class5" class="col-12 mobil-link" data-title="Web - WebDesign"><a href="galerie.php?category=web">Web - WebDesign</a></li>
+                    <li data-id="#class6" class="col-12 mobil-link" data-title="Animation"><a href="galerie.php?category=animation">Animation</a></li>  
                 </ul>
             </nav>
         </div>
@@ -176,7 +177,7 @@
                         <li data-id="#class3" class="col-2 text-center"><a href="galerie.php?category=dessinVectoriel">Dessin vectoriel</a></li>
                         <li data-id="#class4" class="col-2 text-center"><a href="galerie.php?category=pao">Mise en page PAO</a></li>
                         <li data-id="#class5" class="col-2 text-center"><a href="galerie.php?category=web">Web - WebDesign</a></li>
-                        <li data-id="#class6" class="col-2 text-center"><a href="galerie.php#?category=animation">Animation</a></li> 
+                        <li data-id="#class6" class="col-2 text-center"><a href="galerie.php?category=animation">Animation</a></li> 
                        
                     </div>  
                 

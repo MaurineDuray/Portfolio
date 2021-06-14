@@ -1071,7 +1071,7 @@ bottom: 0;
         width: 100%;
     }
     #portfolio{
-        min-height: 175vh;
+        min-height: 15vh;
     }
     
     #ensav{
@@ -1101,16 +1101,27 @@ bottom: 0;
     }
     
 }
+@media all and (max-width:600px){
+    .contact{
+        background-image: none;
+    }
+    #portfolio{
+        min-height: 190vh;
+    }
+}
+
 @media all and (max-width:450px){
     .contact{
         background-image: none;
     }
-    
+    #portfolio{
+        min-height: 180vh;
+    }
 }
 
 @media all and (max-width: 400px){
     #portfolio{
-        min-height: 200vh;
+        min-height: 220vh;
     }
     .fleur img{
         width: auto;
