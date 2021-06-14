@@ -148,7 +148,7 @@
            
             <nav id="TravauxResp">
                 <ul>
-                    <li data-id="#class0" class="col-12 text-center mobil-link" data-title="Travaux récents"><a href="galerie.php?category=tout">Tous les travaux</a></li>
+                    <li data-id="#class0" class="col-12 text-center mobil-link" data-title="Travaux récents"><a href="galerie.php">Tous les travaux</a></li>
                     <li data-id="#class1" class="col-12 mobil-link" data-title="Dessin et illustration"><a href="galerie.php?category=dessinIllu">Dessin et illustration</a></li>
                     <li data-id="#class2" class="col-12 mobil-link" data-title="Retouches graphiques"><a href="galerie.php?category=retoucheGraph">Retouches graphiques</a></li>
                     <li data-id="#class3" class="col-12 mobil-link" data-title="Dessin vectoriel"><a href="galerie.php?category=dessinVectoriel">Dessin vectoriel</a></li>
@@ -170,7 +170,7 @@
             <nav id="Travaux">
                 <ul>
                     <div class="row g-0 justify-content-evently">
-                        <li data-id="#class0" class="col-12 text-start p-5"><a href="galerie.php?category=tout" class="col-2 g-0 text-center" >Tous les travaux
+                        <li data-id="#class0" class="col-12 text-start p-5"><a href="galerie.php" class="col-2 g-0 text-center" >Tous les travaux
 </a></li>
                         <li data-id="#class1" class="col-2 text-center"><a href="galerie.php?category=dessinIllu">Dessin et illustration</a></li>
                         <li data-id="#class2" class="col-2 text-center"><a href="galerie.php?category=retoucheGraph">Retouches graphiques  </a></li>
@@ -212,10 +212,14 @@
                     <?php
                             if(isset($_GET['category'])){
                                 $category = htmlspecialchars($_GET['category']);
+                                $works = $bdd -> prepare("SELECT * FROM works WHERE category=? ORDER BY date");
+                                $works->execute([$category]);
+                            }else{
+                                $works = $bdd -> query("SELECT * FROM works ORDER BY date");
                             }
-                            $works = $bdd -> prepare("SELECT * FROM works WHERE category=? ORDER BY date");
+                            
 
-                            $works->execute([$category]);
+                            
                              if($donworks = $works->fetch())
                             {
                             while($donWorks = $works ->fetch()){
