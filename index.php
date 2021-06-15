@@ -98,6 +98,13 @@
             navGroup.forEach(navi => {
             navi.addEventListener('click',()=>{
                 const target = document.querySelector(navi.dataset.id)
+                const myTitle = navi.dataset.title
+                title.innerHTML = myTitle
+                navGroup.forEach(navi=>{
+                    navi.childNodes[0].classList.remove('hoverOrange')
+                })
+                navi.childNodes[0].classList.add('hoverOrange')
+                
                 
                 const galGroup = document.querySelectorAll(".galgroup")
                 galGroup.forEach(group => {
@@ -121,11 +128,14 @@
                     menuTrvx.classList.remove("menuOpen")
                     let galGroup = document.querySelectorAll('.galgroup')
                     let target = document.querySelector(link.dataset.id)
+                    const myTitle = link.dataset.title
+                    title.innerHTML = myTitle
                     galGroup.forEach(groupe => {
                         groupe.classList.remove('galopen')
                        
                     })
                     target.classList.toggle('galopen')
+                    
                 })
             })
         
@@ -222,7 +232,7 @@ console.log(li)
                     <div  data-sal-easing="ease-out-back" data-sal-duration ="400" data-sal="slide-right" data-sal-delay="300"class="logoslide1">
                         <img src="images/logo.png" alt="">
                     </div>
-                    <h1>MAURINE DURAY</h1>
+                    <h1 >MAURINE DURAY</h1>
                     <h3 data-sal-duration ="400" data-sal="slide-left" data-sal-delay="300" >Graphiste - Infographiste</h3>
                 </div>
             </div>
@@ -318,14 +328,14 @@ console.log(li)
             <nav id="Travaux">
                 <ul>
                     <div class="row g-0 justify-content-evently">
-                        <li data-id="#group0" class="col-12 text-start p-5"><a href="#slide3" class="col-2 g-0 text-center" >Travaux récents
+                        <li data-id="#group0" data-title='Travaux récents'  class="col-12 text-start p-5"><a href="#slide3" class="col-2 g-0 text-center" >Travaux récents
                     </a></li>
-                        <li data-id="#group1" class="col-2 text-center"><a href="#slide3">Dessin et illustration</a></li>
-                        <li data-id="#group2" class="col-2 text-center"><a href="#slide3">Retouches graphiques  </a></li>
-                        <li data-id="#group3" class="col-2 text-center"><a href="#slide3">Dessin vectoriel</a></li>
-                        <li data-id="#group4" class="col-2 text-center"><a href="#slide3">Mise en page PAO</a></li>
-                        <li data-id="#group5" class="col-2 text-center"><a href="#slide3">Web - WebDesign</a></li>
-                        <li data-id="#group6" class="col-2 text-center"><a href="#slide3">Animation</a></li>  
+                        <li data-id="#group1" data-title='Dessin et illustration'class="col-2 text-center"><a href="#slide3">Dessin et illustration</a></li>
+                        <li data-id="#group2" data-title='Retouches graphiques'class="col-2 text-center"><a href="#slide3">Retouches graphiques  </a></li>
+                        <li data-id="#group3" data-title='Dessin vectoriel'class="col-2 text-center"><a href="#slide3">Dessin vectoriel</a></li>
+                        <li data-id="#group4" data-title='Mise en page PAO'class="col-2 text-center"><a href="#slide3">Mise en page PAO</a></li>
+                        <li data-id="#group5" data-title='Web - WebDesign'class="col-2 text-center"><a href="#slide3">Web - WebDesign</a></li>
+                        <li data-id="#group6" data-title='Animation'class="col-2 text-center"><a href="#slide3">Animation</a></li>  
                     </div>  
                 
                 </ul>

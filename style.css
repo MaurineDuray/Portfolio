@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Bellota+Text:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap');
-@import '~sal.js/sal.css';
+@import 'css/sal.css';
 *{
     margin: 0;
     padding: 0; 
@@ -102,6 +102,7 @@ body{
    
     margin-top: 20px;
     cursor: pointer;
+    transition: all 3s;
 }
 .croix .barre{
     background-color: black;
@@ -154,7 +155,7 @@ nav #principal{
     width: 100%;
     height: 100px;
     background-color:rgba(0, 161, 154, 1);
-    z-index: 50;
+    z-index: 201;
     position: fixed;
     top: 0px;
     left: 0px;
@@ -404,7 +405,7 @@ nav #principal{
     background-color: white;
     color: black;
     position: fixed;
-    z-index: 90;
+    z-index: 201;
     top: 0;
     text-align: center;
     right: 100%;
@@ -415,6 +416,7 @@ nav #principal{
 .mobil-link{
     cursor: pointer;
 }
+
 #TravauxResp ul{
     width: 100%;
     height: 70vh;
@@ -423,7 +425,7 @@ nav #principal{
     grid-template-rows: repeat (6, 1fr);
     list-style: none;
     padding: 0px;
-    z-index: 70;
+    z-index: 30;
     position: absolute;
 }
 #TravauxResp ul li{
@@ -496,6 +498,10 @@ nav #principal{
     padding-top:250px;
     padding-bottom: 100px;
 }
+.class-container-gal .menuTravx{
+    position: relative;
+    z-index:200;
+}
 .galgroup{
     width: 100%;
     min-height: 90%;
@@ -523,6 +529,7 @@ nav #principal{
     font-size: 1em;
     font-family: 'Bellota Text', cursive;
     text-align: start;
+    margin-left:5px;
 }
 .fleurslide3{
     position: absolute;
@@ -564,7 +571,7 @@ nav #principal{
     color:rgb(255, 149, 0);
 }
 .hoverOrange{
-    color:rgb(255, 149, 0);
+    color:rgb(255, 149, 0) !important;
 }
 
 .menutrier{
@@ -960,6 +967,8 @@ bottom: 0;
 
     #gauche{
         padding-top: 50px;
+        display: flex;
+        justify-content: center;
     }
     .logoslide1{
         display: none;
@@ -967,7 +976,14 @@ bottom: 0;
     .group{
         margin-top: 50px;
     }
-
+    #slide1 h1{
+        margin-left: 2%;
+        
+    }
+    #slide1 h3{
+        margin-left: 2%;
+       
+    }
     .slide3{
         padding-bottom: 100px;
     }
@@ -1019,6 +1035,9 @@ bottom: 0;
 @media all and (max-width: 992px){
     .menutrier{
         display: block;
+    }
+    #slide3 h4{
+        margin-left: 0px;
     }
     #Travaux{
         background-color: transparent;
@@ -1104,6 +1123,7 @@ bottom: 0;
 @media all and (max-width:600px){
     .contact{
         background-image: none;
+        margin-left: 45%;
     }
     #portfolio{
         min-height: 190vh;
@@ -1113,7 +1133,9 @@ bottom: 0;
 @media all and (max-width:450px){
     .contact{
         background-image: none;
+        
     }
+    
     #portfolio{
         min-height: 180vh;
     }
@@ -1182,7 +1204,7 @@ bottom: 0;
         height: 500px;
         background-image: none;
         text-align: center;
-        margin-left: 50% ;
+        margin-left: 43% ;
         transform: translateX(-50%);
     }
     .contact h5{

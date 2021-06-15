@@ -4,6 +4,8 @@
     if(isset($_GET['category'])){
         $category = htmlspecialchars($_GET['category']);
     }
+    
+    
 ?>
 
 <!DOCTYPE html>
@@ -50,6 +52,7 @@
 
             /* menu travaux*/
 
+
             const fermer =document.querySelector(".fermer")
             const menuTrvx = document.querySelector(".menuTrvxResp")
             const menuTri = document.querySelector(".menutrier")
@@ -66,29 +69,32 @@
             items.forEach(item => {
                 item.addEventListener('click',()=>{
                     menuTrvx.classList.remove("menuOpen")
+                    items.classList.toggle('hoverOrange')
                 })
             })
-            
+
 
             
-            
 
-            
+        
             const mobilLink = document.querySelectorAll('.mobil-link')
-            
-            
+        
             mobilLink.forEach(link=>{
                 link.addEventListener('click',()=>{
                     menuTrvx.classList.remove("menuOpen")
-                    let galGroup = document.querySelectorAll('.classgroup')
+                    let galGroup = document.querySelectorAll('.galgroup')
                     let target = document.querySelector(link.dataset.id)
+                    const myTitle = link.dataset.title
+                    title.innerHTML = myTitle
                     galGroup.forEach(groupe => {
-                        groupe.classList.remove('classopen')
+                        groupe.classList.remove('galopen')
                        
                     })
-                    target.classList.toggle('classopen')
-                    })
+                    target.classList.toggle('galopen')
+                    
+                })
             })
+        
         })
     </script>
 </head>
@@ -148,13 +154,13 @@
            
             <nav id="TravauxResp">
                 <ul>
-                    <li data-id="#class0" class="col-12 text-center mobil-link" data-title="Travaux récents"><a href="galerie.php">Tous les travaux</a></li>
-                    <li data-id="#class1" class="col-12 mobil-link" data-title="Dessin et illustration"><a href="galerie.php?category=dessinIllu">Dessin et illustration</a></li>
-                    <li data-id="#class2" class="col-12 mobil-link" data-title="Retouches graphiques"><a href="galerie.php?category=retoucheGraph">Retouches graphiques</a></li>
-                    <li data-id="#class3" class="col-12 mobil-link" data-title="Dessin vectoriel"><a href="galerie.php?category=dessinVectoriel">Dessin vectoriel</a></li>
-                    <li data-id="#class4" class="col-12 mobil-link" data-title="Mise en page PAO"><a href="galerie.php?category=pao">Mise en page PAO</a></li>
-                    <li data-id="#class5" class="col-12 mobil-link" data-title="Web - WebDesign"><a href="galerie.php?category=web">Web - WebDesign</a></li>
-                    <li data-id="#class6" class="col-12 mobil-link" data-title="Animation"><a href="galerie.php?category=animation">Animation</a></li>  
+                    <li data-id="#group0" class="col-12 text-center mobil-link" data-title="Tous les travaux"><a href="galerie.php">Tous les travaux</a></li>
+                    <li data-id="#group1" class="col-12 mobil-link" data-title="Dessin et illustration"><a href="galerie.php?category=dessinIllu">Dessin et illustration</a></li>
+                    <li data-id="#group2" class="col-12 mobil-link" data-title="Retouches graphiques"><a href="galerie.php?category=retoucheGraph">Retouches graphiques</a></li>
+                    <li data-id="#group3" class="col-12 mobil-link" data-title="Dessin vectoriel"><a href="galerie.php?category=dessinVectoriel">Dessin vectoriel</a></li>
+                    <li data-id="#group4" class="col-12 mobil-link" data-title="Mise en page PAO"><a href="galerie.php?category=pao">Mise en page PAO</a></li>
+                    <li data-id="#group5" class="col-12 mobil-link" data-title="Web - WebDesign"><a href="galerie.php?category=web">Web - WebDesign</a></li>
+                    <li data-id="#group6" class="col-12 mobil-link" data-title="Animation"><a href="galerie.php?category=animation">Animation</a></li>  
                 </ul>
             </nav>
         </div>
@@ -163,21 +169,21 @@
        
 
         <div class="fleurslide3"><img src="images/fleurVerte.png" alt=""></div>
-        <div class="container galerie">
+        <div class="container class-container-gal">
         <h2>PORTFOLIO</h2>
         <h4>See my work</h4>
         <div class="menuTravx">
             <nav id="Travaux">
                 <ul>
                     <div class="row g-0 justify-content-evently">
-                        <li data-id="#class0" class="col-12 text-start p-5"><a href="galerie.php" class="col-2 g-0 text-center" >Tous les travaux
+                        <li data-id="#group0" class="col-12 text-start p-5" data-title="Tous les travaux"><a href="galerie.php" class="col-2 g-0 text-center" >Tous les travaux
 </a></li>
-                        <li data-id="#class1" class="col-2 text-center"><a href="galerie.php?category=dessinIllu">Dessin et illustration</a></li>
-                        <li data-id="#class2" class="col-2 text-center"><a href="galerie.php?category=retoucheGraph">Retouches graphiques  </a></li>
-                        <li data-id="#class3" class="col-2 text-center"><a href="galerie.php?category=dessinVectoriel">Dessin vectoriel</a></li>
-                        <li data-id="#class4" class="col-2 text-center"><a href="galerie.php?category=pao">Mise en page PAO</a></li>
-                        <li data-id="#class5" class="col-2 text-center"><a href="galerie.php?category=web">Web - WebDesign</a></li>
-                        <li data-id="#class6" class="col-2 text-center"><a href="galerie.php?category=animation">Animation</a></li> 
+                        <li data-id="#group1" class="col-2 text-center" data-title="Dessin et illustration"><a href="galerie.php?category=dessinIllu">Dessin et illustration</a></li>
+                        <li data-id="#group2" class="col-2 text-center" data-title="Retouches graphiques"><a href="galerie.php?category=retoucheGraph">Retouches graphiques  </a></li>
+                        <li data-id="#group3" class="col-2 text-center" data-title="Dessin vectoriel"><a href="galerie.php?category=dessinVectoriel">Dessin vectoriel</a></li>
+                        <li data-id="#group4" class="col-2 text-center" data-title="Mise en page PAO"><a href="galerie.php?category=pao">Mise en page PAO</a></li>
+                        <li data-id="#group5" class="col-2 text-center" data-title="Web - WebDesign"><a href="galerie.php?category=web">Web - WebDesign</a></li>
+                        <li data-id="#group6" class="col-2 text-center" data-title="Animation"><a href="galerie.php?category=animation">Animation</a></li> 
                        
                     </div>  
                 
@@ -204,11 +210,13 @@
             </div>
         </div>
 
-        <div id="titre" class="col-12 text-center" style="color:black;font-size : 12pt; background-color: rgba(255, 255, 255, 0.722);">Catégorie choisie: <span>Travaux récents
+        <div id="titre" class="col-12 text-center" style="color:black;font-size : 12pt; background-color: rgba(255, 255, 255, 0.722);"> <span>
+        
         </span></div>
 
-        <div  class="container  class-container photo " >
-                <div class="row g-3 classgroup classopen" id="class0" >
+        <div  class="class-container-galerie" >
+            
+                <div class="row" id="class0" >
                     <?php
                             if(isset($_GET['category'])){
                                 $category = htmlspecialchars($_GET['category']);
