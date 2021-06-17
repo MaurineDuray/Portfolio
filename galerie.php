@@ -1,9 +1,10 @@
 <?php
     require "connexion.php";
 
-    if(isset($_GET['category'])){
-        $category = htmlspecialchars($_GET['category']);
-    }
+
+
+   
+  
     
     
 ?>
@@ -151,16 +152,16 @@
                 <div class="barre" id="barre1"></div>
                 <div class="barre" id="barre2"></div>
             </div>
-           
+            <div class="fleurslideResp"><img src="images/fleurVerte.png" alt=""></div>
             <nav id="TravauxResp">
                 <ul>
-                    <li data-id="#group0" class="col-12 text-center mobil-link" data-title="Tous les travaux"><a href="galerie.php">Tous les travaux</a></li>
-                    <li data-id="#group1" class="col-12 mobil-link" data-title="Dessin et illustration"><a href="galerie.php?category=dessinIllu">Dessin et illustration</a></li>
-                    <li data-id="#group2" class="col-12 mobil-link" data-title="Retouches graphiques"><a href="galerie.php?category=retoucheGraph">Retouches graphiques</a></li>
-                    <li data-id="#group3" class="col-12 mobil-link" data-title="Dessin vectoriel"><a href="galerie.php?category=dessinVectoriel">Dessin vectoriel</a></li>
-                    <li data-id="#group4" class="col-12 mobil-link" data-title="Mise en page PAO"><a href="galerie.php?category=pao">Mise en page PAO</a></li>
-                    <li data-id="#group5" class="col-12 mobil-link" data-title="Web - WebDesign"><a href="galerie.php?category=web">Web - WebDesign</a></li>
-                    <li data-id="#group6" class="col-12 mobil-link" data-title="Animation"><a href="galerie.php?category=animation">Animation</a></li>  
+                    <li data-id="#group0" class="col-12 text-center mobil-link" ><a href="galerie.php">Tous les travaux</a></li>
+                    <li data-id="#group1" class="col-12 mobil-link" ><a href="galerie.php?category=dessinIllu">Dessin et illustration</a></li>
+                    <li data-id="#group2" class="col-12 mobil-link" ><a href="galerie.php?category=retoucheGraph">Retouches graphiques</a></li>
+                    <li data-id="#group3" class="col-12 mobil-link" ><a href="galerie.php?category=dessinVectoriel">Dessin vectoriel</a></li>
+                    <li data-id="#group4" class="col-12 mobil-link" ><a href="galerie.php?category=pao">Mise en page PAO</a></li>
+                    <li data-id="#group5" class="col-12 mobil-link" ><a href="galerie.php?category=web">Web - WebDesign</a></li>
+                    <li data-id="#group6" class="col-12 mobil-link" ><a href="galerie.php?category=animation">Animation</a></li>  
                 </ul>
             </nav>
         </div>
@@ -210,9 +211,37 @@
             </div>
         </div>
 
-        <div id="titre" class="col-12 text-center" style="color:black;font-size : 12pt; background-color: rgba(255, 255, 255, 0.722);"> <span>
-        
-        </span></div>
+        <div id="titre" class="col-12 text-center" style="color:black;font-size : 12pt; background-color: rgba(255, 255, 255, 0.722);"> 
+        <?php
+
+    if(isset($_GET['category'])){
+    $category=htmlspecialchars($_GET['category']);
+    if($category==="dessinIllu"){
+        $titre = 'Dessin et illustration';
+    }elseif($category==="retoucheGraph"){
+        $titre = 'Retouches graphiques';
+    }elseif($category==="dessinVectoriel"){
+        $titre = 'Dessin vectoriel';
+    }elseif($category==="pao"){
+        $titre = 'Mise en page - pao';
+    }elseif($category==="web"){
+        $titre = 'Web - WebDesign';
+    }elseif($category==="animation"){
+        $titre = 'Animation';
+    }else{
+        $titre = '';
+    }
+    }
+
+    
+
+    if(!isset($_GET['category'])){
+        $titre = 'Tous les travaux';
+    }
+
+            echo "<br>Catégorie choisie: ".$titre."";        
+        ?>
+       </div>
 
         <div  class="class-container-galerie" >
             

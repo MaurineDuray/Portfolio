@@ -303,7 +303,7 @@ console.log(li)
                 <div class="barre" id="barre1"></div>
                 <div class="barre" id="barre2"></div>
             </div>
-            <div class="fleurslide3"><img src="images/fleurVerte.png" alt=""></div>
+            <div class="fleurslideResp"><img src="images/fleurVerte.png" alt=""></div>
             <nav id="TravauxResp">
                 <ul>
                     <li data-id="#group0" class="col-12 text-center mobil-link" data-title="Travaux récents">Travaux récents</li>
